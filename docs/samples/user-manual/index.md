@@ -1,113 +1,78 @@
-# SiteEdge Platform — User Manual
+# End-User Manual: SIMATIC S7+ Connector
 
-**Version:** 2.4  
-**Audience:** Plant operators and facility managers  
-**Last updated:** March 2026
+This is a sample interactive end-user manual created dynamically from an uploaded PDF. It demonstrates the use of **Admonitions**, **Tables**, **Tabs**, and **Code Blocks** common in modern technical documentation.
 
 ---
 
-## Introduction
+## 1. Introduction to SIMATIC S7+ Connector
 
-SiteEdge is an industrial IoT platform that enables real-time monitoring, 
-alerting, and reporting for plant equipment and facilities. This manual 
-covers the core workflows for day-to-day platform use.
+Welcome to the SIMATIC S7+ Connector documentation for Industrial Edge.
 
----
+The SIMATIC S7+ Connector is a south-bound connector that connects data from S7-1200/1500 PLCs, PLCSim Advanced, and Siemens Software Controller with Industrial Edge. Connectors are essential to collect data from various PLCs and devices and make it available on the Industrial Edge system. 
 
-## Logging in
+With the S7+ Connector, data can be accessed via the optimized S7 protocol. This connector is developed as a Connectivity Suite Connector and therefore supports standardized configuration as well as data transfer.
 
-1. Open a supported browser and navigate to your SiteEdge portal URL.
-2. Enter your email address and password.
-3. Click **Sign In**.
-4. If your organization uses SSO, click **Sign in with SSO** and follow your 
-   identity provider's login steps.
+!!! tip "Common Configurator"
+    The Common Configurator configures the Connector and is available free of charge in the Industrial Edge Marketplace.
 
-> **Note:** After five failed login attempts, your account is locked for 
-> 15 minutes. Contact your administrator to unlock it manually.
+### Security Information
 
----
+Siemens provides products and solutions with industrial cybersecurity functions that support the secure operation of plants, systems, machines, and networks.
 
-## Viewing the dashboard
+!!! danger "Unauthorized Access"
+    Customers are responsible for preventing unauthorized access to their plants, systems, machines and networks. Systems should only be connected to an enterprise network or the internet if appropriate security measures (e.g., firewalls and network segmentation) are in place.
 
-The Dashboard provides a real-time overview of all monitored devices and 
-active alerts in your organization.
-
-**To view the dashboard:**
-
-1. Click **Dashboard** in the left navigation panel.
-2. Use the **Site** dropdown to filter by location.
-3. Click a device card to view its detailed status.
-
-**Dashboard elements**
-
-| Element | Description |
-|---|---|
-| Device cards | Show status, location, and last seen time for each device |
-| Alert banner | Displays the count of active high-severity alerts |
-| Status indicator | Green = online, Yellow = warning, Red = offline |
+!!! warning "Product Updates"
+    Siemens strongly recommends that product updates are applied as soon as they are available. Failure to apply the latest updates may increase customer's exposure to cyber threats.
 
 ---
 
-## Managing alerts
+## 2. Requirements and Time Synchronization
 
-### Viewing alerts
+Both the PLC and the Industrial Edge (IE) Device must use time synchronization (for example, NTP). Without synchronization, the times of the two devices become out of sync.
 
-1. Click **Alerts** in the left navigation panel.
-2. Use the **Severity** filter to narrow results.
-3. Click an alert row to view full details and device history.
+### Firmware Minimum Requirements
 
-### Acknowledging an alert
+To configure the PLC time stamp, you must meet the following firmware versions:
 
-1. Open the alert you want to acknowledge.
-2. Click **Acknowledge**.
-3. Enter a note describing the action taken.
-4. Click **Confirm**.
+=== "S7-1500"
+    - **Minimum Firmware:** V2.6 
+    - **Required Software:** TIA Portal V15.1 or newer
 
-> **Note:** Acknowledging an alert does not resolve it. 
-> The alert remains active until the underlying condition is cleared.
-
-### Resolving an alert
-
-1. Open the acknowledged alert.
-2. Click **Resolve**.
-3. Enter a resolution note.
-4. Click **Confirm**.
-
-The alert moves to the **Resolved** tab and is removed from the active view.
+=== "S7-1200"
+    - **Minimum Firmware:** V4.4 
+    - **Required Software:** TIA Portal V16 or newer
 
 ---
 
-## Generating reports
+## 3. Supported Data Types
 
-1. Click **Reports** in the left navigation panel.
-2. Click **New Report**.
-3. Select a report type — **Device Summary**, **Alert History**, or **Uptime Report**.
-4. Set the date range using the calendar picker.
-5. Click **Generate**.
-6. Once generated, click **Download** to export the report as a PDF or CSV.
+Data Types from a PLC must be implicitly converted in order to use them in an IE Device. The data types are converted from S7-1500/1200 PLC data types to Connectivity Suite Data Types, and then into the corresponding Industrial Edge Data Types.
+
+| S7-1500/1200 Type | Connectivity Suite Type | Length (bits) | Edge Data Type | JSON Value Type |
+| :--- | :--- | :--- | :--- | :--- |
+| **Bool** | Bool | 1 | Bool | Integer |
+| **Byte** | UInt8 | 8 | USInt | Integer |
+| **Word** | UInt16 | 16 | UInt | Integer |
+| **DWord** | UInt32 | 32 | UDInt | Integer |
+| **LWord** | UInt64 | 64 | ULInt | String |
+| **SInt** | Int8 | 8 | SInt | Integer |
+| **Real** | Float32 | 32 | Real | Floating-point |
+| **String** | String | 8 (per char) | String | String |
+
+!!! info "About Array Support"
+    Arrays are provided in the Common Configurator as a single tag. SIMATIC S7+ Connector supports arrays of default data types, including `String`, `WString` and `DTL`. It provides all individual elements of an array as separate tags and also the whole array as one common tag in a JSON file.
 
 ---
 
-## User roles
+## 4. Configuring the PLC Time Stamp
 
-| Role | Permissions |
-|---|---|
-| Viewer | View dashboard, devices, and reports |
-| Operator | View and acknowledge alerts |
-| Administrator | Full access including user management and API tokens |
+All tags receive a time stamp. You can activate the PLC time stamp (Source Timestamp) or use the connector time stamp for subscribed tags. 
 
----
+| Parameter | Value | Description |
+| :--- | :--- | :--- |
+| `use_source_timestamp` | `True` / `False` | Activates the PLC time stamp. |
+| `max_source_timestamp_diff` | `Int` | The maximum acceptable differential value in seconds. <br/> - **0 sec**: the difference is not checked. PLC time is used. <br/> - **n sec**: when the difference between PLC and connector exceeds `n`, the local time stamp is used. |
 
-## Troubleshooting
-
-**Device shows as offline but is physically running**  
-Check the network connection between the device and the SiteEdge gateway. 
-Verify that the gateway service is running on the local network.
-
-**Cannot log in**  
-Ensure you are using the correct portal URL for your organization. 
-If SSO is enabled, confirm with your IT team that your account is provisioned.
-
-**Report shows no data**  
-Confirm that the selected date range contains recorded data. 
-Devices must be online during the reporting period to appear in reports.
+!!! caution "Alarm Timestamps vs Data Subscriptions"
+    When configuring both data subscriptions and alarm subscriptions, it is strongly recommended to enable **"Source Timestamp"** for your data subscriptions. Alarm timestamps are always generated and provided by the PLC. Using the Source Timestamp ensures a unified and accurate timeline across all your subscribed information.

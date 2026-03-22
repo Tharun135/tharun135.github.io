@@ -1,0 +1,1847 @@
+1
+2
+3
+4
+5
+6
+7Indus trial Edg e
+SIMA TIC S7+ Connect or
+ManualPreface
+What's ne w
+Ov er vie w
+Ins talling SIMA TIC S7+ Connect or
+Conﬁgur ing SIMA TIC S7+ Connect or
+Per formance measur es
+Limit ations
+v2.3
+01/2026
+A5E51720554-AK
+2 Manual, 01/2026, A5E51720554-AKLegal information
+Warning notice system
+This manual contains notices you have to observe in order to ensure your personal safety, as
+well as to prevent damage to property. The notices referring to your personal safety are
+highlighted in the manual by a safety alert symbol, notices referring only to property damage
+have no safety alert symbol. These notices shown below are graded according to the degree of
+danger.
+ DAN GER
+indicates that death or severe personal injury will result if proper precautions are not taken.
+ WAR NING
+indicates that death or severe personal injury may result if proper precautions are not taken.
+ CAUTION
+indicates that minor personal injury can result if proper precautions are not taken.
+NOTICE
+indicates that property damage can result if proper precautions are not taken.
+If more than one degree of danger is present, the warning notice representing the highest
+degree of danger will be used. A notice warning of injury to persons with a safety alert symbol
+may also include a warning relating to property damage.
+Qualiﬁed Personnel
+The product/system described in this documentation may be operated only by personnel
+qualiﬁed for the speciﬁc task in accordance with the relevant documentation, in particular its
+warning notices and safety instructions. Qu aliﬁed personnel are those who, based on their
+training and experience, are capable of identifying risks and avoiding potential hazards when
+working with these products/systems.
+Proper use of Siemens products
+Note the following:
+ WAR NING
+Siemens products may only be used for the applications described in the catalog and in the
+relevant technical documentation. If products and components from other manufacturers are
+used, these must be recommended or approved by Siemens. Proper transport, storage,
+installation, assembly, commissioning, operation and maintenance are required to ensure
+that the products operate safely and without any problems. The permissible ambient
+Manual, 01/2026, A5E51720554-AK 3conditions must be complied with. The information in the relevant documentation must be
+observed.
+Trademarks
+All names identiﬁed by ® are registered trademarks of Siemens Aktiengesellschaft. The
+remaining trademarks in this publication may be trademarks whose use by third parties for their
+own purposes could violate the rights of the owner.
+Disclaimer of Liability
+We have reviewed the contents of this publication to ensure consistency with the hardware and
+software described. Since variance cannot be precluded entirely, we cannot guarantee full
+consistency. However, the information in this publication is reviewed regularly and any
+necessary corrections are included in subsequent editions.
+Siemens  Aktieng esellscha ft
+Digital Ind ustries
+Postfach 48 48
+90026 NÜRNBERG
+GERMA NYA5E 51720554- AK
+01/2026 Su bject to cha ng eCopyright © Siemens  2024.
+All rights reserved
+4 Manual, 01/2026, A5E51720554-AK9
+9
+9
+9
+9
+10
+10
+11
+11
+11
+12
+12
+13
+13
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+16
+16
+16Table of cont ent
+1  Preface
+1.1  Introduction
+1.1.1  Introduction to SIMATIC S7+ Connector
+1.1.2  Validity of the documentation
+1.1.3  Ov erview of additional documentation
+1.2  Legal Information
+1.2.1  Cybersecurity information
+1.2.2  Security Information for Industrial Edge App
+1.2.3  General Data Protection Regulation (GDPR)
+1.2.3.1  Personal data
+1.2.3.2  Purpose
+1.2.3.3  Securing of data
+1.2.3.4  Deletion policy
+1.2.3.5  Data conﬁguration
+2  What's new
+2.1  What's new in SIMATIC S7+ Connector?
+2.1.1  Version 2.3
+2.1.2  Features
+2.1.3  Bug ﬁxes
+2.1.4  Version 2.2
+2.1.4.1  Features
+2.1.4.2  Bug ﬁxes
+2.1.5  Version 2.1
+2.1.5.1  Features
+2.1.5.2  Bug ﬁxes
+2.1.6  Version 2.0
+2.1.6.1  Features
+2.1.6.2  Limitations
+2.1.7  Version 1.5.0
+2.1.7.1  Support for Browsing of PLCs
+2.1.8  Version 1.4
+2.1.8.1  PLC alarms
+2.1.8.2  Bugﬁxes
+2.1.9  Version 1.3
+2.1.9.1  PLC alarms
+2.1.9.2  Supporting special tags
+2.1.10  Version 1.2
+2.1.10.1  Support for Arrays
+2.1.10.2  Check of PLC certiﬁcates
+Manual, 01/2026, A5E51720554-AK 516
+16
+16
+16
+16
+17
+17
+17
+18
+18
+20
+20
+20
+20
+22
+22
+22
+23
+25
+25
+25
+26
+27
+27
+27
+27
+28
+28
+29
+29
+30
+30
+30
+31
+31
+31
+31
+31
+32
+32
+32
+32
+33
+33
+332.1.10.3  PLC time stamp conﬁguration
+2.1.11  Version 1.1
+2.1.11.1  CS Registry Service
+2.1.11.2  CS Databus Gateway
+2.1.11.3  SIMATIC S7+ Connector
+3  Overview
+3.1  Ov erview of SIMATIC S7+ Connector
+3.1.1  Conﬁguring data streams of the S7+ tags
+3.2  Supported data types
+3.2.1  Supported Data Types
+3.2.1.1  Support for Arrays
+3.2.1.2  Support of Char and String
+3.2.2  Time data types
+3.2.2.1  SIMATIC-speciﬁc time data types
+3.2.3  Conﬁguring the PLC time stamp
+3.2.3.1  Requirements
+3.2.3.2  Conﬁguring source timestamp
+3.2.4  Default Data Types in Industrial Edge
+4  Installing SIMATIC S7+ Connector
+4.1  System requirements
+4.1.1  Software requirements
+4.1.2  Hardware requirements
+4.1.3  Update Databus app
+4.2  Check of PLC certiﬁcates
+4.2.1  Introduction
+4.2.2  Description
+4.2.3  Changing or deleting a certiﬁcate
+4.2.3.1  Scenarios with CA Certiﬁcates
+4.2.4  Possible TLS conﬁgurations, changes and errors
+4.2.5  Possible certiﬁcate-related errors
+4.3  Installation process
+4.3.1  Ov erview of the installation process
+4.3.1.1  Ov erview of the entire IE app purchase process
+4.3.1.2  Purchasing a license for an IE app
+4.3.2  Copying an IE app from the IE Hub to the IEM catalog
+4.3.2.1  Introduction
+4.3.2.2  Requirement
+4.3.2.3  Procedure
+4.3.3  Installing an IE app on the IE Device
+4.3.3.1  Introduction
+4.3.3.2  Requirement
+4.3.3.3  Procedure
+4.3.4  Starting an IE app on the IE Device
+4.3.4.1  Introduction
+4.3.4.2  Requirement
+6 Manual, 01/2026, A5E51720554-AK33
+34
+34
+34
+34
+34
+36
+36
+37
+37
+37
+39
+40
+40
+40
+40
+40
+41
+41
+42
+47
+47
+48
+49
+49
+50
+50
+52
+52
+53
+53
+54
+54
+55
+55
+56
+57
+57
+57
+58
+58
+58
+58
+59
+594.3.4.3  Procedure
+5  Conﬁguring SIMATIC S7+ Connector
+5.1  Connector Conﬁguration
+5.1.1  Conﬁguring SIMATIC S7+ Connector
+5.1.1.1  Ov erview
+5.1.1.2  Involved components
+5.1.2  SIMATIC S7+ Browse Service
+5.1.2.1  Ov erview
+5.1.2.2  Supported functionality
+5.1.2.3  Workﬂow and use cases
+5.1.2.4  Credentials
+5.1.2.5  Limitations
+5.1.3  Common Import Converter for SIMATIC S7+ Connector
+5.1.3.1  Ov erview
+5.1.3.2  Using Import Converter with Common Conﬁgurator
+5.1.3.3  Supported functionality
+5.1.3.4  Using TIA Portal SCADA export
+5.2  Conﬁguring data streams
+5.2.1  Conﬁguring with the Common Conﬁgurator
+5.2.1.1  Importing tags oﬄine
+5.2.1.2  Importing tags online
+5.2.1.3  Conﬁguring the acquisition mode
+5.2.1.4  Deploying S7+ tags in IIH Semantics
+5.2.2  Conﬁguring via Databus (optional)
+5.2.2.1  Entering the credentials for Databus (Common Conﬁgurator)
+5.2.2.2  Deploying S7+ tags in the Databus (Common Conﬁgurator)
+5.2.2.3  Conﬁguring subscriptions manually from the PLC (Databus Gateway)
+5.2.2.4  Conﬁguring metadata topics and users (Databus)
+5.2.3  Migrating from SIMATIC S7 Connector
+5.2.3.1  Migrating at connector level
+5.2.3.2  Migrating at connection level
+5.3  Conﬁguring PLC alarms
+5.3.1  Conﬁguring PLC alarms
+5.3.1.1  Conﬁguring alarm subscription
+5.3.2  Support of full-text messages
+5.3.3  Metadata of alarms
+5.3.4  Properties of alarm notiﬁcations
+5.3.4.1  Alarm notiﬁcations for the SIMATIC S7+ Connector
+5.3.4.2  Extended alarm notiﬁcations
+5.3.4.3  Example of an alarm notiﬁcation
+5.3.4.4  Alarm-Event-API notiﬁcation
+5.4  Using special tags
+5.4.1  Using special tags
+5.4.1.1  Using special tags with IIH Essentials
+5.4.1.2  Using special tags with the Common Conﬁgurator and Databus
+Manual, 01/2026, A5E51720554-AK 760
+60
+60
+60
+61
+61
+62
+63
+63
+63
+63
+64
+64
+64
+64
+64
+64
+64
+64
+65
+65
+65
+65
+65
+66
+66
+666  Performance measures
+6.1  Qu ality codes
+6.2  Qu antity structures
+6.2.1  Maximum number of tags
+6.2.2  SIMATIC S7+ Connector
+6.2.2.1  Read test
+6.2.2.2  Write test
+6.2.3  Common Import Converter
+6.2.3.1  Test environment
+6.2.3.2  Test scenario
+6.2.3.3  Test result
+7  Limitations
+7.1  Known restrictions
+7.1.1  Databus Gateway
+7.1.1.1  Supported JSON  formats
+7.1.1.2  Conﬁguration update
+7.1.2  SIMATIC S7+ Connector
+7.1.2.1  Conﬁguration update
+7.1.2.2  Data Type limitations
+7.1.2.3  PLC Timestamps
+7.1.2.4  SIMATIC S7-1500 Software Controller
+7.1.2.5  Variable naming restrictions
+7.1.2.6  File size limitations
+7.1.3  SIMATIC S7+ Connector and Databus Gateway
+7.1.4  All CS Connectors
+7.1.5  Common Conﬁgurator
+7.1.6  System diagnosis
+8 Manual, 01/2026, A5E51720554-AK
+Manual, 01/2026, A5E51720554-AK 91.1 Introduction
+1.1.1 Introduction to SIMATIC S7+ Connector
+Welcome to SIMATIC S7+ Connector documentation for Industrial Edge.
+The SIMATIC S7+ Connector is a south bound connector that connects data from S7-1200/1500
+PLCs, PLCSim Advanced and Siemens Software Controller with Industrial Edge. Connectors are
+essential to collect data from various PLCs and devices and make it available on the Industrial
+Edge system. With the S7+ Connector data can be accessed via the optimized S7 protocol.
+This connector is developed as Connectivity Suite Connector and therefore supports
+standardized conﬁguration as well as data transfer.
+The Common Conﬁgurator conﬁgures the Connector and is available free of charge in the
+Industrial Edge Marketplace.
+Funded by the Federal Ministry for Economic Aﬀairs and Energy based on a decision by the
+German Bundestag. Your funding provider: Kicks for Edge as part of the EU funding program
+IPCEI-CIS (FKZ:13IPC008)
+1.1.2 Validity of the documentation
+The SIMATIC S7+ Connector for Industrial Edge documentation is valid for installing the app
+on an Industrial Edge Device (IE Device). It provides users with comprehensive guidance on how
+to use the application.
+1.1.3 Overview of additional documentation
+The following reference links give more information on Industrial Edge applications:Preface 1 
+Funding A ckno wledgment
+
+10 Manual, 01/2026, A5E51720554-AKRefer en ce Des cription
+Ind ustrial Edge
+Ma rketplacePlatform to purcha se app licens es
+Ind ustrial Edge Hub Thi s page describes the  func tions  of the  Siemens  Ind ustrial Edge platform and  the
+func tiona lities of the  Edge Ma na gement Sy stem.All the  documentation for the  IE platform
+can be found  und er Documen ts.
+Sy stem overview Thi s page provides an overview of all Edge solutions .
+Ind ustrial Edge
+training sWeb Based Training : Integrate IT in the  production with Siemens  Ind ustrial Edge
+Databus Databus documentation
+Ind ustrial Information
+Hub (IIH)IIH manu al
+SIMA TIC SC ADA Export
+for TIA PortalMo re information and  the  download for the  SIMA TIC SC ADA export.
+SIMA TIC S7- 1500 S7-
+PLCSIM Advanc edMa nu al for S7- PLCSIM Advanc ed
+1.2 Legal Information
+1.2.1 Cyb ersecurity information
+Siemens provides products and solutions with industrial cybersecurity functions that support the
+secure operation of plants, systems, machines and networks.
+In order to protect plants, systems, machines and networks against cyber threats, it is necessary
+to implement – and continuously maintain – a holistic, state-of-the-art industrial cybersecurity
+concept. Siemens’ products and solutions constitute one element of such a concept.
+Customers are responsible for preventing unauthorized access to their plants, systems,
+machines and networks. Such systems, machines and components should only be connected to
+an enterprise network or the internet if and to the extent such a connection is necessary and
+only when appropriate security measures (e.g. ﬁrewalls and/or network segmentation) are in
+place.
+For additional information on industrial cybersecurity measures that may be implemented,
+please visit https://www.siemens.com/cybersecurity-industry.
+Siemens’ products and solutions undergo continuous development to make them more secure.
+Siemens strongly recommends that product updates are applied as soon as they are available
+and that the latest product versions are used. Use of product versions that are no longer
+supported, and failure to apply the latest updates may increase customer’s exposure to cyber
+threats.
+Manual, 01/2026, A5E51720554-AK 111.2.2 Security Information for Industrial Edge Ap p
+Security information (assumption/constraint) for Industrial Edge Apps are as follows:
+Only authorized internal operators will have access to IE Device with-in secure network using
+VPN conne ction.
+Perimeter firewall configuration responsibility lies with end customer.
+Security guidelines for usage of USB sticks within shop floor are applied.
+Creating users with appropriate access rights needs to be done during commissioning and it
+is the responsibility of the operator.
+Customer is responsible for configuring the application as per the installation/user manual,
+based on system requirements and technical capabilities of app documented so that the
+Automation System performance is not impacted.
+The system is installed in an environment that ensures physical access is limited to
+authorized maintenance personne l only. Managing unauthorized attachment of removable
+devices is the responsibility of the operator.
+The platform including hardware, firmware and operating system is securely configured and
+maintained by the operator.
+The operator is capable of protecting the environment from malware infection.
+Centralized IT security components (Active Directory, Centralized IT Logging Server) are
+provided and well secured by the operator and can be trusted.
+The operator personne l accessing the system is well trained in the usage of the system and
+general information security aspects like password handling, removable media, etc. are in
+place.
+Operator is responsible for the Confidentiality, Integrity, and Availability (CIA) of data stored
+outside the IE Device.
+Operator is responsible for configuring the PLCs with appropriate read/write access levels
+(Legitimization) and configure Industrial Edge Apps with appropriate passwords for data
+collection from PLC's.
+Customer takes care about time sync of Industrial Edge Management (IEM) and IE Device.
+1.2.3 General Data Protection Regulation (GDPR)
+Siemens adheres to the principles of data protection, in particular the principles of data
+minimization (Privacy by Design).
+For this product, SIMATIC S7+ Connector, this means:
+1.2.3.1 Personal data
+There is no personal data collected but following data is stored to allow machine to machine
+communication:
+12 Manual, 01/2026, A5E51720554-AKDatabus credentials
+OPC-UA server login credentials
+OPC-UA server certificates for encryption and signing
+Tags data and metadata from field devices
+Timestamp
+Smart device information and app usage data
+If the customer links the data mentioned above to other data (e.g., shift plans) or if the
+customer saves personal information on the same medium (e.g. hard disk) and thus creates a
+personal reference, the customer has to ensure that the guidelines regarding data protection are
+observed.
+This section refers to any personal data processed by the Application other than the personal
+data contained in log-ﬁles / tracking data (if any). Personal data are any information relating
+to an identiﬁed or identiﬁable natural person. Please note that IP-addresses, device identiﬁers
+such as IMEI, UDID, IMSI, MAC-address, MSISDN, location data or machine data (if machine
+data tracks events triggered by user interaction with the machine) usually qualify as personal
+data.
+1.2.3.2 Purpose
+The data mentioned above is required for the following purposes:
+Access protection and security measures
+Message system for traceability and availability
+For app diagnosis
+Storage of the data is aﬀected for a suitable purpose and is limited to what is strictly necessary,
+as the information is indispensable in order to identify the authorized operators.
+1.2.3.3 Securing of data
+The above data will not be stored anonymously or pseudonymized, as the purpose
+(identiﬁcation of the operating personnel) cannot be achieved otherwise.
+The following data will be used only within the product and within the Edge eco-system and will
+not be automatically passed on to third parties or unauthorized persons:
+Databus credentials
+OPC-UA server login credentials
+OPC-UA server certificates
+The above data is secured by adequate technical measures, such as storing and encryption of
+process data in databases.NOTICE
+
+Manual, 01/2026, A5E51720554-AK 13The tags data and metadata from ﬁeld devices data will be used only within the product and will
+not be automatically passed on to third parties or unauthorized persons.
+The customer must ensure the access protection as part of the process conﬁguration.
+1.2.3.4 Deletion policy
+This product does not provide an automatic deletion for the Databus or PLC credentials already
+provided by the user. In case the user provides a diﬀerent Databus or PLC credentials, the
+previous credentials will be overwritten. Since there is no explicit delete option, the user could
+provide junk Databus or PLC credentials to delete the existing valid credentials.
+If the user deletes a connection or tag, then the credentials information and other details would
+also be deleted.
+In short, the collected log data will be automatically deleted once the limit is reached (oldest
+entries ﬁrst).
+1.2.3.5 Data conﬁguration
+The customer can conﬁgure the data collected via the product using Common Conﬁgurator.
+14 Manual, 01/2026, A5E51720554-AK2.1 What's new in SIMATIC S7+ Connector?
+2.1.1 Version 2.3
+2.1.2 Features
+Reduces logging on the ARM platform to error and debug levels only. Info and warning logs
+are discarded.
+Publishes additional system limits, such as tag subscription limits, in logs and through the
+device info API.
+2.1.3 Bug ﬁxes
+Fixed reading of arrays of bools.
+Fixed checking of system limits for Read Request
+2.1.4 Version 2.2
+2.1.4.1 Features
+Support for TIA Portal User Management & Access Control (UMAC) authentication.
+Support for larger PLC Programs: The App allows importing or browsing of larger PLC
+Programs due to extended app memory (requires IE Device OS 2.3).
+Support for ARM IE Devices.
+2.1.4.2 Bug ﬁxes
+Fixed writing of string-arrays.
+2.1.5 Version 2.1
+2.1.5.1 Features
+Supports additional acquisition mode Cyclic Continuous.
+Improved application logging: reduced log entries, JSON format.
+Several migration use cases from "SIMATIC S7 Connector" (supported by Import Converter
+V3.1 and Common Configurator V2.1 or newer).What's ne w 2 
+Manual, 01/2026, A5E51720554-AK 152.1.5.2 Bug ﬁxes
+Fixed browsing for string-arrays.
+Fixed browsing for negative array bound s.
+2.1.6 Version 2.0
+2.1.6.1 Features
+The conne ctor can be configured remotely from a central Common Configurator running on
+IEM System.
+The conne ctor supports browsing of certificates stored on PLCs.
+Support for writing more than 100 data points.
+2.1.6.2 Limitations
+Requires IE Device-OS V2.1 or later.
+2.1.7 Version 1.5.0
+2.1.7.1 Support for Browsing of PLCs
+The conne ctor can browse PLCs with large amount of tags configured.
+Arrays can be browsed as basic data types and as arrays.
+Browsing of arrays of basic types (incl. String) provides "array data points" as well as the
+single elements of the array.
+2.1.8 Version 1.4
+2.1.8.1 PLC alarms
+PLC alarms reflect now also acknowledged and deleted status of alarms in industrial edge.
+Support more display types for alarm associated parameters, as provided by the TIA portal.
+2.1.8.2 Bugﬁxes
+Conne ctions w/o data points are now supported.
+2.1.9 Version 1.3
+2.1.9.1 PLC alarms
+The parts of the PLC alarms that are read out at runtime, such as from ProgramAlarm, are
+filled.
+16 Manual, 01/2026, A5E51720554-AK2.1.9.2 Supporting special tags
+SIMATIC S7-1500 CPUs supply various kinds of status information independently of the
+current configuration or of the TIAP project. The S7+ Connector now supports these special
+tags.
+2.1.10 Version 1.2
+2.1.10.1 Support for Ar rays
+Both array tags and tags for individual array elements are supported by S7+ Connector.
+2.1.10.2 Check of PLC certiﬁcates
+The PLC certificates are verified. Invalid certificates cause the connection to be rejected.
+2.1.10.3 PLC time stamp conﬁguration
+When subscribing to tags, you can choose whether the PLC time stamp or the time stamp of
+the S7+ Conne ctor is to be used.
+2.1.11 Version 1.1
+2.1.11.1 CS Registry Service
+Reduced storage footprint.
+2.1.11.2 CS Databus Gateway
+Multiple conne ctors are supported in parallel (including new configuration file format).
+Performance improvements (faster JSON generation)
+In the metadata, Sample Rate Information is supported (e.g. for the Audio Conne ctor).
+Improved application log.
+Reduced storage footprint.
+The information application name was added in the IE metadata message.
+Improved IE metadata message.
+Improvement of the (re-)conne ction behavior.
+2.1.11.3 SIMATIC S7+ Connector
+Arrays are supported.
+Tested with 20 PLCs in parallel.
+Improved application log.
+Reduced storage footprint.
+Manual, 01/2026, A5E51720554-AK 173.1 Overview of SIMATIC S7+ Connector
+You can use SIMATIC S7+ Connector for Industrial Edge to make the tags of one or more S7-
+1500/S7-1200 PLCs or from PLCSIM Advanced available in the IIH (Industrial Information Hub) so
+that the values of the S7+ tags can be analyzed and visualized in apps, such as Performance
+Insight.
+To establish connections, you have to conﬁgure them with the Common Conﬁgurator.
+Alternatively you can upload (generated) conﬁguration ﬁles via IEM to the connector.
+Because SIMATIC S7+ Connector is a Connectivity Suite (CS) connector, you can also make the
+values of the S7+ tags available directly in the IIH without using the Databus.
+3.1.1 Conﬁguring data streams of the S7+ tags
+You can conﬁgure the tags for the S7+ Connector using several options:
+Import file from TIAP SCADA Export toolOver vie w 3 
+18 Manual, 01/2026, A5E51720554-AKBrowse tags online
+Import other sources, for example config from IE S7 Connector (Plus CPU)
+The possible workﬂows are shown in the following ﬁgure:
+3.2 Supported data typ es
+3.2.1 Supported Data Typ es
+Data Types from a PLC must be implicitly converted in order to use them in an IE Device.
+The data types are implicitly converted from S7-1500/1200 PLC data types to Connectivity Suite
+Data Types and then into the corresponding Industrial Edge Data Types:
+Manual, 01/2026, A5E51720554-AK 19S7-1500/1200 PLC Data
+Typ eConnec tivity Suite Data
+Typ eLen gth
+(bits)Edge Data
+Typ eJSON value Data
+Typ e
+Bool Bool 1 Bool Integer
+Byte UInt8 8 USInt Integer
+Word UInt16 16 UInt Integer
+DWord UInt32 32 UDInt Integer
+LWord UInt64 64 ULInt String
+SInt Int8 8 SInt Integer
+USInt UInt8 8 USInt Integer
+Int Int16 16 Int Integer
+UInt UInt16 16 UInt Integer
+DInt Int32 32 DInt Integer
+UDInt UInt32 32 UDInt Integer
+LInt Int64 64 LInt String
+ULInt UInt64 64 ULInt String
+Real Float32 32 Real Floating -point
+nu mber
+LReal Float64 64 LReal Floating -point
+nu mber
+Cha r 1) String Cha r String
+WCha r String WCha r String
+String  1) String String String
+WString String WString String
+1) SIMATIC PLC store characters for Char and String with 8 Bits. Remarks see chapter below.
+20 Manual, 01/2026, A5E51720554-AKIn the current version of Common Conﬁgurator, the Connectivity Suite data types are
+converted to the corresponding default IE data types.
+You can ﬁnd additional information in the section Default data typ es for IE.
+3.2.1.1 Support for Ar rays
+Arrays are provided in the Common Conﬁgurator as a tag.
+SIMATIC S7+ Connector supports arrays of default data types, including String, WString and DTL.
+S7+ Connector provides all individual elements of an array as separate tags and also the whole
+array as one common tag in a JSON  ﬁle. The user can decide which data to work with.
+There is a limit on the total size of all array elements that can be stored in a PLC. For example,
+the S7-1516 has a limit of 200 KB. The limit can be diﬀerent for other models and ﬁrmware
+versions.
+3.2.1.2 Support of Char and String
+SIMATIC PLC store characters for Char and String with 8 Bits. The ASCII standard is deﬁned
+only for 7 Bit. The 2nd half of the possible values is deﬁned by the used code page.
+The runtime system has no information about the used code-page in the TIA Portal. That's why
+the SIMATIC S7+ Connector is using ISO/IEC 8859-1 (Latin-1) code-page.
+When writing Char or String values to the PLC this code-page is used as well. Any invalid
+character is replaced by U+00FF (ÿ).
+3.2.2 Time data typ es
+3.2.2.1 SIMATIC-speciﬁc time data typ es
+SIMATIC-speciﬁc time data types are mapped either to TimeSpan or to TimeStamp:Default dat a types f or Indus trial Edg e
+Storag e of ar ray elements
+
+Manual, 01/2026, A5E51720554-AK 21S7-1500/1200 PLCdata typ e Connec tivity Suited ata
+typ eLen gth
+(bits)Edge data typ e JSON value
+data typ eCommen t
+S5TI ME  (s5t) duration
+Example: S5TI ME #10sTimeSp an
+Example: 100.000.00064 Time
+Example: 100000000Cha racter
+string  (64-
+bit nu mber
+as string )10 [sec] x
+1.000
+[ms]x
+1.000 [us
+x 10
+[100ns ]
+TIME  (t)
+Example:
+T#10d 20h30m 20s 630m sTimeSp an
+Example:
+8.514.263.000.00064 Time
+Example:
+8514263000000Cha racter
+string  (64-
+bit nu mber
+as string )
+LTIME  (lt) TimeSp an 64 LTime Cha racter
+string  (64-
+bit nu mber
+as string )
+Date (d)
+Example: DATE #2009- 12- 31TimeStamp
+Example:
+12.622.176.000.000.00064 Date
+Example: 2009- 12-
+31T 00:00:00.0000000ZCha racter
+string
+(formatted
+time string )7 decimal
+places
+because o
+the
+[100  ns ]
+resolution
+TOD  (tod)
+(TIME _OF _DAY)
+Example: TOD #10:20:30.400TimeSp an
+Example:
+372.304.000.00064 Time_Of_ Day
+Example:
+372304000000Cha racter
+string  (64-
+bit nu mber
+as string )
+LTOD  (ltod)
+(LTIME _OF _DAY)
+LTOD #10:20:30.400_ 365_ 215TimeSp an
+372.304.003.65264 LTime_Of_ Day
+372304003652Cha racter
+string  (64-
+bit nu mber
+as string )1)
+DT (dt)
+(DATE _AND_TIME )
+Example: DT#2008- 10- 25-
+8:12:34.567TimeStamp
+Example:
+12.249.187.545.670.00064 DateTime
+Example: 2008- 10-
+25T 08:12:34.5670000ZCha racter
+string
+(formatted
+time string )
+LDT (ldt)
+(L_DATE _AND_TIME )TimeStamp 64 LDT Cha racter
+string
+(formatted
+time string )
+DTL  (dtl) TimeStamp 64 DateTime Cha racter
+string
+(formatted
+time string )
+22 Manual, 01/2026, A5E51720554-AK1) The LTOD data type is mapped to [1 ns] resolution, CS data types: TimeSpan and TimeStamp
+only in [100 ns], therefore the last two digits are omitted.
+Default data typ es for Industrial Edge
+In the current version of Common Conﬁgurator (V1.6), the Connectivity Suite data types are
+converted to the corresponding default IE data types.
+You can ﬁnd additional information in the section Default data typ es for IE.
+3.2.3 Conﬁguring the PLC time stamp
+All tags receive a time stamp. You can activate the PLC time stamp (Source Timestamp) or use
+the connector time stamp for subscribed tags. The connector time stamp is used for non-
+subscribed tags that are read once.
+Both PLC and IE Device must use time synchronization (for example, NTP). Without
+synchronization, the times of the two devices become out of sync.
+3.2.3.1 Requirements
+To conﬁgure the PLC time stamp, meet the following requirements:
+PLC Minimum ﬁrmware ver sion
+S7- 1500 V2.6 (TIAP V15.1)
+S7- 1200 V4.4 (TIAP V16)
+3.2.3.2 Conﬁguring source timestamp
+To conﬁgure source timestamp, use the following parameters:
+Par am eter Value Des cription
+use_source_timestamp True/False Activates the  PLC time stamp.
+max_source_timestamp_diff Int The  maximum acceptable diﬀerential value in second s.
+For 0 sec, the  diﬀerenc e is no t che cked. The  PLC time stamp is
+used.
+For n sec, whe n the  diﬀerenc e between the  PLC time stamp
+and  the  conne ctor time stamp exceeds the  set value n, the
+local time stamp is used. Whe n the  diﬀerenc e between the  PLC
+time stamp and  the  conne ctor time stamp is less tha n the  set
+value n, the  PLC time stamp is used.
+Using the PLC time stamp aﬀects the Qu ality Code. For more information, see Qu ality Codes.NOTICE
+
+Manual, 01/2026, A5E51720554-AK 23When conﬁguring both data subscriptions and alarm subscriptions, it is strongly
+recommended to enable "Source Timestamp" for your data subscriptions. Alarm timestamps
+are always generated and provided by the PLC (source timestamp). By using "Source
+Timestamp" for data subscriptions, this ensures a uniﬁed and accurate timeline across all your
+subscribed information.
+3.2.4 Default Data Typ es in Industrial Edge
+In the current version of the Common Conﬁgurator (V1.6), the Connectivity Suite data types are
+published as standard Industrial Edge data types. A diﬀerent conﬁguration of types is not
+possible in the current version of Common Conﬁgurator.
+Connec tivity Suite
+Data Typ eIndustrial Edge
+Data Typ e
+Bool Bool
+UInt8 USInt
+Int8 SInt
+UInt16 UInt
+Int16 Int
+UInt32 UDInt
+Int32 DInt
+UInt64 ULInt
+Int64 LInt
+Float32 REAL
+Float64 LReal
+TimeSp an LTime
+(8 bytes)TimeStamp LDT
+(8 bytes L_Date_and _Time)
+String String
+Raw Array of Byte
+To convert the Connectivity Suite data to the appropriate Industrial Edge data types, you can
+also conﬁgure the Databus Gateway manually. You can ﬁnd the conﬁguration ﬁle in theNOTICE
+
+24 Manual, 01/2026, A5E51720554-AKManagement tab of the Databus Gateway app.
+Manual, 01/2026, A5E51720554-AK 254.1 System requirements
+Note the following system requirements for the installation of the Edge Apps.
+4.1.1 Software requirements
+The following Internet browsers are required:
+Google Chrome, Version ≥ 72
+Firefox Version ≥ 62
+The apps are available in the Industrial Edge Marketplace. From there, you can transfer the latest
+version of the app to your IEM and then install it on your IE Device:Ins talling SIMA TIC S7+ Connect or 4 
+26 Manual, 01/2026, A5E51720554-AKAp p/Componen t Req uired
+ver sionDes cription Source
+IE Device-OS V2.1 or later Ind ustrial Edge Op erating  Sy stem IEM Sy stem
+Common
+Conﬁ guratorV2.0 or later You ne ed this if, to conﬁ gure the  data sources
+and  data points on IE Device.Ind ustrial Edge
+Ma rketplace
+IIH Se mantics V2.0 or later Op tiona l Ind ustrial Edge
+Ma rketplace
+IIH Registry Se rvice V2.0.0 or
+laterIt creates the  conne ction between the  ind ividual
+compone nts and  he lps to view the  conne ctors in
+the  Common Conﬁ gurator.Ind ustrial Edge
+Ma rketplace
+Common Import
+ConverterV3.0.0 or
+laterIt is required for the  conversion of diﬀerent ﬁle
+formats to the  IIH compatible format and  to
+import the  values of tags from a TIA Portal
+project oﬄine .Ind ustrial Edge
+Ma rketplace
+SIMA TIC S7+
+Conne ctorV2.1.0 Ma nd atory Ind ustrial Edge
+Ma rketplace
+Databus V3.0.0 or
+laterRequired if you want to publish the  values of
+tags to the  Databus.Ind ustrial Edge
+Ma rketplace
+SIMA TIC SC ADA
+Export for TIA PortalTIA Portal
+V18 or laterRequired if you want to import the  values of
+tags from a TIA Portal project oﬄine .Siemens  Ind ustry
+Onl ine  Su pport
+(SIOS)
+All the above mentioned apps must be installed on the same IE Device.
+The latest version of Databus V3.0.0 is capable enough to communicate to connectivity
+suite conne ctors as the Databus Gateway application is now integrated to Databus.
+4.1.2 Hardware requirements
+A device on which IEM is running.
+An IE Device (IE Device) that is compatible with IEM:
+- IE Device Model: E.g. SIMATIC IPC127E, IPC227E Nanobox, IPC427E, and IPC847E
+- Hard disk: At least 10 GB available
+- RAM: 2 GB RAM available
+The IE Device must be on board the IEM.NOTICE
+
+Manual, 01/2026, A5E51720554-AK 27IEM, IE Device, and web browsers must be synchronous in the UTC time zone.
+4.1.3 Update Databus app
+Follow the steps below to update Databus app to V3.0.0:
+1. Navigate to the Common Configurator and create a backup of your current configuration.
+2. Upgrade the Databus app to version 3.0.0.
+3. As a precaution, Wait 3 minutes before continuing to ensure all processes are stable.
+4. Uninstall the Databus Gateway app from your IE Device.
+4.2 Check of PLC certiﬁcates
+4.2.1 Introduction
+Certiﬁcates ensure secure communication in the system and typically require no user
+intervention. The TIAP Export includes necessary certiﬁcates, while the Common Import
+Converter embeds them within the JSON  conﬁguration. The Common Conﬁgurator forwards this
+ﬁle to the S7+ Connector, which validates self-signed and CA certiﬁcates.
+In cases where certiﬁcate changes or deletions are needed, this documentation provides
+guidance on modifying certiﬁcates, adjusting TLS settings, and resolving common certiﬁcate-
+related errors.
+SIMATIC S7+ Connector Version 1.1
+The secure TLS connection between S7+ Connector and PLC is supported but the PLC
+certiﬁcates are not checked.
+SIMATIC S7+ Connector Version 1.2
+The PLC certiﬁcates are veriﬁed.
+If they are not valid, the conne ction is rejected.
+If no certificates are configured, the check is not performed. The connection is still
+established and secured as in version 1.1. The communication partners are not
+authenticated.
+4.2.2 Description
+You typically do not need to manage the certiﬁcates manually. In the certiﬁcate management
+workﬂow, various components work together to handle and verify certiﬁcates automatically:
+TIA Portal Export already contains the certificates.NOTICE
+NO TICE
+
+28 Manual, 01/2026, A5E51720554-AKS7+ Import Converter adds the certificates as an embedded file to the JSON configuration
+file.
+Common Configurator forwards the JSON configuration file to S7+ Connector.
+S7+ Conne ctor processes the certificates.
+S7+ Conne ctor checks both the self-signed certificates and the CA certificates.
+4.2.3 Changing or deleting a certiﬁcate
+Oc casionally, you need to change or delete certiﬁcates.
+To delete a certiﬁcate or provide a diﬀerent certiﬁcate ﬁle, use the Common Conﬁgurator under
+'Datasource Settings'.
+When using CA certiﬁcates, it is suﬃcient to provide only the CA certiﬁcate chain; the end
+entity certiﬁcate is not needed. Therefore, you can manually delete the end entity certiﬁcate
+in the Common Conﬁgurator.
+4.2.3.1 Scenarios with CA Certiﬁcates
+4.2.3.1.1 Ensur ing communication wit h t he desir ed PL C
+To ensure that the connector communicates with exactly the desired PLC, both the end entity
+certiﬁcate and the CA certiﬁcate chain must be conﬁgured. This conﬁguration ensures that
+communication is speciﬁc and secure.NO TICE
+
+Manual, 01/2026, A5E51720554-AK 294.2.3.1.2 Using a conﬁgur ation f or multiple Connect or s/PL Cs
+If you want to use a conﬁguration for multiple PLCs, the end entity certiﬁcate must be deleted. In
+this scenario, the driver checks the PLC's certiﬁcate against the provided CA certiﬁcate chain. This
+allows for a ﬂexible and scalable conﬁguration option without the need for individual end entity
+certiﬁcates for each PLC.
+4.2.4 Possible TLS conﬁgurations, changes and errors
+TIAP  conﬁguration
+settingsStan dard proced ure
+Common Conﬁgurator >
+ImportPossible modiﬁcations Possible cau ses  of an
+er ror
+TIAP project is no t
+protected.
+Certiﬁcates are no t
+conﬁ gured.The  JSON  conﬁ guration
+ﬁle contains  the  end
+entity certiﬁcate.The  end  entity certiﬁcate is
+removed from the  JSON
+conﬁ guration ﬁle. (S7+
+Conne ctor does no t che ck the
+PLC certiﬁcates.)The PLC certificate in
+the JSON
+configuration file is
+incorrect.
+The PLC certificate in
+the JSON
+configuration file has
+errors.
+Se lf-signe d
+certiﬁcate is
+conﬁ gured.The  JSON  conﬁ guration
+ﬁle contains  the  end
+entity certiﬁcate.The  end  entity certiﬁcate is
+removed from the  JSON
+conﬁ guration ﬁle. (S7+
+Conne ctor does no t che ck the
+PLC certiﬁcates.)The PLC certificate in
+the JSON
+configuration file is
+incorrect.
+The PLC certificate in
+the JSON
+configuration file has
+errors.
+A CA certiﬁcate is
+conﬁ gured.JSON  conﬁ guration ﬁle
+contains  both end  entity
+certiﬁcate and  CA
+certiﬁcate (certiﬁcate
+cha in) .The  end  entity certiﬁcate is
+removed from the  JSON
+conﬁ guration ﬁle. (S7+
+Conne ctor che cks CA
+certiﬁcates.)The PLC and/or CA
+certificate in the
+JSON configuration
+file is incorrect.
+The PLC and/or CA
+certificate in the
+JSON configuration
+file has errors.
+4.2.5 Possible certiﬁcate-related errors
+If certiﬁcate-related errors occur, check the log ﬁle.
+30 Manual, 01/2026, A5E51720554-AKLog ﬁle Possible cau ses
+ERROR Conn-ID'401' 'Login'Callback 'Handle Result' (generic:
+**Invalid Argument Value**...The  PLC and /or CA certiﬁcate
+(certiﬁcate cha in)  in the  JSON
+conﬁ guration ﬁle ha s errors.
+ERROR Conn-ID'401' - Mismatched end-entity certificate! ERROR Conn-
+ID'401' 'Login'Callback 'Handle Result' (generic: **TLS Error**...The  PLC certiﬁcate in the  JSON
+conﬁ guration ﬁle is inc orrect.
+ERROR Conn-ID'401' - Error in certificate check! Conn-ID'401' -
+openSSL error code for certificate check: '19'ERROR Conn-ID'401'
+'Login'Callback 'Handle Result' (generic: **TLS Error**...The  CA certiﬁcate (certiﬁcate cha in)
+is missing  or wrong .
+4.3 Installation process
+4.3.1 Overview of the installation process
+Industrial Edge apps are available in the Industrial Edge Hub Library. The Industrial Edge Hub (IE
+Hub for short) is the central repository for all available Industrial Edge apps (IE apps) from
+Siemens and other app partners in the ecosystem.
+The installation of an IE app involves the following steps:
+Copying an IE app from the IE Hub to IEM
+Installing an app on one or more Industrial IE Devices (IE Devices)
+Starting an installed app on an IE Device
+The installation steps are demonstrated in the following video:
+4.3.1.1 Overview of the entire IE app purchase process
+The following ﬁgure shows the steps required to install and start an Industrial Edge app
+purchased from the Industrial Edge Marketplace on an IE Device:
+Manual, 01/2026, A5E51720554-AK 31
+4.3.1.2 Purchasing a license for an IE app
+You can purchase licenses for individual IE apps in the Industrial Edge Marketplace.
+You can ﬁnd detailed instructions at:
+How to buy on the Siemens Industrial Edge Marketplace?
+You can ﬁnd more information on purchasing IE apps and managing your account at the
+following link:
+Frequently Asked Qu estions
+4.3.2 Copying an IE app from the IE Hub to the IEM catalog
+4.3.2.1 Introduction
+This section provides information on how to transfer an IE app from the IE Hub to the IEM
+catalog of one or more IEM instances.
+IEM is a control level for managing all devices, apps, and users of a shop ﬂoor.
+4.3.2.2 Requirement
+The following requirements must be met:
+Internet conne ction
+Access to the IE Hub
+Available IEM instance
+32 Manual, 01/2026, A5E51720554-AK4.3.2.3 Procedure
+To copy an app to the IEM catalog, follow these steps:
+1. Open the IE Hub and enter your credentials.
+The home screen of the IE Hub is displayed.
+2. Open the Library tab in the Industrial Edge Hub.
+The library contains all the apps for which you have purchased a license and all system apps.
+3. Click the desired app.
+The app details are displayed.
+4. In the drop-down list, select all IEM instances to which you want to copy the app.
+5. Click Copy latest version to IEM.
+The app is copied, and a corresponding job is created. You can follow the job status in the
+status window of the corresponding IEM instance.
+4.3.3 Installing an IE app on the IE Device
+4.3.3.1 Introduction
+This section provides information on how to install an IE app from an IEM instance on an IE
+Device.
+4.3.3.2 Requirement
+The following requirement must be met:
+Access to the IEM instance in whose catalog the IE app to be installed is available.
+4.3.3.3 Procedure
+To install the IE app on the IE Device, follow these steps:
+1. Open the IEM home page and log in.
+2. Open the IEM catalog and click the app you want to install.
+3. Click the Install button.
+The Install App dialog window is displayed. If you already have a configuration file, for
+example, a configuration file that you downloaded from another IE Device, you can upload it
+here.
+4. Select one or more IE Devices on which you want to install the app. The devices must be
+switched on and online.
+5. Select one of the following installation options:
+Click Install Delayed or Install Later to start the installation at a later time.
+Click Install Now to install the app immediately.
+6. Click the Job Status tab to view the installation progress.
+Manual, 01/2026, A5E51720554-AK 33After the installation you can check to see which apps were installed on which IE Devices under
+My Installed Ap ps.
+All the apps can be installed in the same way as explained above.
+4.3.4 Starting an IE app on the IE Device
+4.3.4.1 Introduction
+This section provides information on how to start an IE app installed on the IE Device.
+4.3.4.2 Requirement
+The following requirement must be met:
+Access to the IE Device on which the IE app is installed.
+4.3.4.3 Procedure
+To start an app, follow these steps:
+1. Open the IE Device home page and log in.
+2. Open the Apps tab.
+3. Launch Common Configurator app and open the Get Data tab.
+The SIMATIC S7+ Connector app appears in the available conne ctors list.
+4. Click SIMATIC S7+ Connector app to start configuring the data sources and tags.Ins tallation of o ther apps
+
+34 Manual, 01/2026, A5E51720554-AK 5.1 Connector Conﬁguration
+5.1.1 Conﬁguring SIMATIC S7+ Connector
+5.1.1.1 Overview
+You can conﬁgure the SIMATIC S7+ Connector in two ways:
+Online configuration
+Offline configuration
+The diagram below shows the online and oﬄine conﬁguration options:
+flowchart TD
+  CFG[Configure <br>S7+ Connector] --> OFFL[<b>OFFLINE</b><br> Configuratio
+  CFG --> ONL[<b>ONLINE</b><br> Configuration]
+  OFFL --> MIGR[<b>Migration</b><br>S7 Connector Config]
+  OFFL --> TIAP[<b>Engineering Tool</b><br>TIAP Scada Export]
+  ONL --> PLC[<b>Browsing</b><br>Online Access to PLC]
+5.1.1.2 Involved components
+The oﬄine use case involves the following components:
+Common Configurator as UI for configuring
+TIA Portal including TIAP SCADA Export
+Common Import Converter (Background  Service as Edge App)
+The oﬄine use case also includes migration scenarios. You can migrate existing conﬁgurations of
+the SIMATIC S7 Connector when S7-1200/1500 was conﬁgured using the optimized S7 protocol.
+The online use case involves the following components:
+Common Configurator as UI for configuring
+S7+ Browsing Service (integrated in SIMATIC S7+ Connector App)
+The diagram below shows the involved components for online and oﬄine conﬁguration:Conﬁgur ing SIMA TIC S7+ Connect or 5 
+Manual, 01/2026, A5E51720554-AK 35flowchart TD
+  TIA[TIA Portal] --> IMP[Common Import Converter]
+  IMP --> CC[Common Configurator]
+  CC --> S7CONN[SIMATIC S7plusConn]
+  S7CONN --> CC
+  CC --> BRWS[S7+ Browse Service]
+  BRWS --> CC
+  S7CONN --> PLC[SIMATIC PLC]
+  PLC --> S7CONN
+  BRWS --> PLC
+  PLC --> BRWS
+5.1.1.2.1 Common Im por t Con ver ter
+This tool converts vendor and device-speciﬁc conﬁguration ﬁles into standardized Connectivity
+Suite-compatible conﬁgurations. It also converts TIAP export ﬁles to Connectivity Suite JSON
+conﬁgurations.
+The Common Conﬁgurator uses this conversion functionality when you import a device-speciﬁc
+conﬁguration. The Common Conﬁgurator runs the Common Import Converter in the background
+to convert the ﬁle into the common JSON  conﬁguration format.
+5.1.1.2.2 Mig rating SIMA TIC S7 Connect or
+The SIMATIC S7 Connector supports the following conﬁguration variants:
+S7-300/400, S7 protocol
+S7-1200/1500, S7 protocol
+S7-1200/1500, optimized S7 protocol
+The image below shows the supported protocols of SIMATIC S7 Connector:
+Migration from SIMATIC S7 Connector to SIMATIC S7+ Connector is only supported for the
+conﬁgurations of S7-1200/1500, Op timized S7-Protocol.NO TICE
+
+36 Manual, 01/2026, A5E51720554-AK5.1.1.2.3 Legitimation modes
+The SIMATIC S7+ Connector supports multiple UMAC (User Management & Access Control)
+legitimation modes:
+Legacy (default): Legitimate via protection level password. The username is ignored.
+Local User: Legitimate via user at local user-management (TIAP V19+, CPU FW 3.1+).
+Central User: Legitimate via user at central user-management server (TIAP V20+, CPU FW
+4.0+).
+Token: Legitimate via SSO token at central user-management server. The username is
+ignored (TIAP V20+, CPU FW 4.0+).
+The legitimation via token with limited lifetime is not recommended, as it needs to be
+updated after expiration.
+For more information, see:
+TIAP UMAC
+Central User Management
+5.1.2 SIMATIC S7+ Browse Service
+5.1.2.1 Overview
+The SIMATIC S7+ Browse Service is not a separate edge application. It is integrated in the
+SIMATIC S7+ Connector since version V1.5.
+You need this service to conﬁgure the SIMATIC S7+ Connector when it is online and connected
+to a PLC. This means you do not need a TIAP project or export for this use case.
+The diagram below shows the components and data ﬂow when using S7+ Browsing Service:NO TICE
+
+Manual, 01/2026, A5E51720554-AK 37 flowchart TD
+    CC[Common Configurator] --> |<i>1. Browse Request</i>| BRWS[SIMATIC S7+
+    BRWS --> |<i>2. Online Access PLC</i>| PLC[SIMATIC PLC]
+    PLC --> |<i>3. Data points</i>| BRWS
+    BRWS --> |<i>4. Browse Response</i>| CC
+5.1.2.2 Supported functionality
+The SIMATIC S7+ Browse Service supports the following:
+S7-1500 CPUs and S7-1200 CPUs from FW V4.0
+All data types including DTL
+Arrays and structs by providing all single elements
+Basic-type arrays as array objects
+PLC passwords in conne ction parameters
+End-entity certificates and CA certificates in connection parameters
+5.1.2.3 Workﬂow and use cases
+You can use the browse service in two ways:
+Modifying an existing data source
+Creating a new data source
+5.1.2.3.1 Modifying an e xis ting dat a sour ce
+When the data source already exists, all required connection parameters are in place. This
+includes IP address, PLC password, and certiﬁcate ﬁles. You can use the browse functionality of
+the Common Conﬁgurator.
+5.1.2.3.2 Cr eating a ne w dat a sour ce
+You must provide the IP address of the PLC.
+When the PLC is conﬁgured with no access (complete protection), you need at least HMI access
+to browse the data points.
+Browsing works when you do not conﬁgure any certiﬁcates.
+5.1.2.4 Credentials
+38 Manual, 01/2026, A5E51720554-AK5.1.2.4.1 Gener al is sues
+Scen ario AP I Call Return Code
+PLC no t reacha ble UNAVAILABLE (14)
+Invalid IP (192.1.1.300) INVALID_ARGUMENT (3)
+5.1.2.4.2 CPU pas sw or d
+A CPU password is required only when the PLC is conﬁgured with no access (complete
+protection). You need at least the password for HMI access.
+CPU Acces s Level Browse Req ues t Browse Res ponse
+Full access no  PW ✔ browsed no des
+Full access PW conﬁ gured❌  Error PERMISSION_DENIED (7)
+Legitimate to OMS+ Se ssion rejected. Che ck password.
+Read access no  PW ✔ browsed no des
+HMI  access no  PW ✔ browsed no des
+No access no  PW ❌  Error PERMISSION_DENIED (7)
+Explore PLC Tag Containe rs failed
+No access HMI  password ✔ browsed no des
+You can check the detailed error messages in the application log of the SIMATIC S7+
+Connector and SIMATIC S7+ Browse Service.NO TICE
+
+Manual, 01/2026, A5E51720554-AK 395.1.2.4.3 Cer tiﬁcat es
+When establishing an online connection to the PLC, the browsing service considers certiﬁcates
+only when they are part of the connection parameters.
+Both End-Entity Certiﬁcates and CA Certiﬁcates are supported.
+CPU Cer ts Cer ts Browse Req ues t Browsing Res ult
+EE Cert no  cert ✔ browsed no des
+Auto-Trust
+WARNING: Accept unk no wn certiﬁcate due to missing  conﬁ guration
+EE Cert valid EE cert ✔ browsed no des
+EE Cert invalid EE cert❌  Error INVALID_ARGUMENT (3)
+Error Invalid Argument Value
+EE Cert wrong  EE cert❌  Error UNAUTHENTICATED (16)
+Error TL SVeriﬁcationF ailed
+CA Cert(s) no  cert ✔ browsed no des
+Auto-Trust
+WARNING: Accept unk no wn certiﬁcate due to missing  conﬁ guration
+CA Cert(s) valid CA cert(s) ✔ browsed no des
+CA Cert(s) invalid CA Cert(s)❌  Error INVALID_ARGUMENT (3)
+Error Invalid Argument Value
+CA Cert(s) wrong  CA cert(s)❌  Error UNAUTHENTICATED (16)
+Error TL SVeriﬁcationF ailed
+The browsing service does not return PLC certiﬁcates as part of the browsed data (
+Browse-
+API). When an application needs the certiﬁcate information from the PLC, it can use the
+DeviceInfo-API from the Browse Service (as used by the Common Conﬁgurator).
+5.1.2.5 Limitations
+The browse service has the following limitations:
+Certificates are not provided in the browsing information.
+Alarm classes are not provided.NO TICE
+NO TICE
+
+40 Manual, 01/2026, A5E51720554-AK When something goes wrong, you must check the application log of the SIMATIC S7+
+Connector ﬁrst, followed by the SIMATIC S7+ Browsing Service. The logs of the browsing
+are part of the S7+ Connector logs.
+5.1.3 Common Import Converter for SIMATIC S7+ Connector
+The Common Import Converter is installed as a background service. You do not work directly
+with this app. The Common Conﬁgurator calls it in the background. The converter is used when
+a conﬁguration ﬁle needs conversion to the format used by the Common Conﬁgurator.
+5.1.3.1 Overview
+The Common Import Converter oﬀers a wide range of functionality for importing or migrating
+use cases. This chapter covers the following use cases related to SIMATIC S7+ Connector:
+Importing TIA Portal SCADA Export files
+Migrating configurations from S7 Conne ctor to SIMATIC S7+ Connector (only S7-1200/1500,
+optimized S7 protocol)
+5.1.3.2 Using Import Converter with Common Conﬁgurator
+The diagram below shows the data ﬂow and involved components when conﬁguring oﬄine:
+flowchart LR
+    USER[<b>User</b><br><i>Restore a Backup / <br>Add Data Source from File
+    CC --> |<i>Request <br> Conversion</i>| CNV[Common <br>Import Converter
+    CNV --> |<i>Standardized <br>Config JSON</i>| CC
+5.1.3.3 Supported functionality
+The Common Import Converter supports the following:
+S7-1500 CPUs and S7-1200 CPUs
+All data types including DTL
+Arrays and structs by providing all single elements
+Basic-type arrays as array objects
+PLC passwords
+End-entity certificates and CA certificates
+5.1.3.4 Using TIA Portal SCAD A exportNOTICE
+
+Manual, 01/2026, A5E51720554-AK 41 flowchart LR
+    TIAP[TIA Portal <br> incl. <br> TIAP SCADA Export] --> |<i>Export <br>c
+    ZIP --> |<i>Provide ZIP</i>| CC[Common <br>Configurator]
+    CC --> |<i>Request <br> Conversion</i>| CNV[Common <br>Import Converter
+    CNV --> |<i>Standardized <br>Config JSON</i>| CC
+5.1.3.4.1 Wor kﬂo w wit h TIA P or tal SC AD A e xpor t
+To use TIA Portal SCADA export, proceed as follows:
+1. Export the PLC from TIA Portal with SIMATIC SCADA Export for TIA Portal. For more
+information, see SIOS.
+The ZIP file contains several encrypted JSON files.
+The Common Import Converter processes the ZIP file and provides a common JSON
+configuration file.
+2. Use the Common Configurator to import (upload) the ZIP file.
+3. The Common Configurator runs the Common Import Converter in the background.
+When something goes wrong, you must check the application log of the Common Import
+Converter. You can download the application log via IE Device or via IEM.
+For more information, see Conﬁguring with the Common Conﬁgurator.
+5.2 Conﬁguring data streams
+5.2.1 Conﬁguring with the Common Conﬁgurator
+The SIMATIC S7+ Connector allows you to conﬁgure, manage, and maintain data sources and
+tags.
+For detailed instructions on managing data sources and tags, see Industrial Information Hub
+user manual.
+This section provides resources for managing data sources and tags. It includes instructions on
+conﬁguring, adding, editing, and deleting data sources and tags. It also includes steps for
+deploying them. You will also ﬁnd guidance on importing tag conﬁgurations and backing up or
+restoring them.
+The Common Conﬁgurator covers the following use cases related to the SIMATIC S7+ Connector:
+Configuring data sources offline (TIA Portal Project export)
+Configuring data sources online (online access to PLC required)
+Migrating from existing SIMATIC S7 Conne ctor configuration filesNO TICE
+
+42 Manual, 01/2026, A5E51720554-AK5.2.1.1 Importing tags oﬄine
+To deﬁne and conﬁgure tags for connected PLCs in the Common Conﬁgurator, export the tags
+from a TIA Portal project and import them into the Common Conﬁgurator.
+All available tags are then displayed in the Common Conﬁgurator.
+Loading the tags may take some time depending on the size of the export ﬁle.
+5.2.1.1.1 Req uir ements f or im por ting TIAP conﬁgur ation
+Before importing TIAP conﬁguration, meet the following requirements:
+Common Import Converter is installed on the IE Device
+A TIA Portal project with configured PLCs and tags is available
+SIMATIC SCADA Export for TIA Portal is installed
+This TIA Portal Add-On exports all required information from the TIA Portal project and
+generates an export file for the Common Configurator. For more information and download,
+see SIMATIC SCADA Export for TIA Portal.
+The conne ctions to the desired PLCs have been configured in the Common Configurator.
+If a PLC has more than one Ethernet interface, the import includes all IP addresses. Before
+proceeding, delete the addresses you do not need.
+5.2.1.1.2 Expor ting t ags fr om t he TIA P or tal pr oject
+To export the tags from the TIA Portal project, proceed as follows:
+1. Download the Add-On Tool SIMATIC SCADA Export for TIA Portal from Siemens Industry
+Online Support and install it on the PC where the TIA Portal runs.
+2. Compile the TIAP project.
+Compile the TIAP project each time before exporting so that the export provides
+consistent data.NO TICE
+Compiling TIAP pr oject
+
+Manual, 01/2026, A5E51720554-AK 433. Right-click the desired PLC and select "Export to SIMATIC SCADA" from the shortcut menu.
+
+44 Manual, 01/2026, A5E51720554-AKExport Tags for only one PLC at a time.
+An export file is created.
+4. Repeat the process for additional PLCs if necessary.
+5.2.1.1.3 Im por ting t ags
+To import the tags from the SIMATIC SCADA export ﬁle, proceed as follows:
+1. Open the "Get Data" tab in the IIH.
+Installed or available conne ctors appears. A SIMATIC S7+ Connector can access multiple
+PLCs at the same time. You can see at a glance how many configured PLCs have been
+conne cted and how many tags are transferred.
+2. Click "SIMATIC S7+ Conne ctor".
+The SIMATIC S7+ Conne ctor page appears.NOTICE
+
+Manual, 01/2026, A5E51720554-AK 45
+3. Open the "Tags" tab.
+4. Click 
+ .
+The view for selecting the import file is displayed.
+5. Click 
+  and select the import file.
+This button is only displayed when you have installed the Common Import Converter on the
+IE Device.
+46 Manual, 01/2026, A5E51720554-AKThe tags included in the exported project are displayed.
+Tags that can not be imported are listed under Invalid Tags.
+If the tags are imported from an unknown data source, the new data source is created.
+If a data source with the same name already exists, the imported tags are added to the
+tags already existing.
+6. Select "Acquisition cycle" and "Access type".
+7. Select the tags to publish in the IIH.
+8. Click "Apply".
+9. Repeat the procedure for further tags to import with a different acquisition cycle or with a
+different access type.
+NOTICE
+
+Manual, 01/2026, A5E51720554-AK 4710. Click "Import".
+The imported tags are displayed in the "Tags" view.
+5.2.1.1.4 Result
+The imported S7+ tags are displayed.
+Then deploy the connection to the PLC and the selected tags to the IIH Semantics. For more
+information, see Deploying S7+ tags in IIH Semantics.
+5.2.1.2 Importing tags online
+5.2.1.2.1 Descr iption
+When you have an online connection to the PLC, you can browse and import tags directly.
+Loading the tags may take some time depending on the size of the project.
+5.2.1.2.2 Req uir ements
+You need an online connection to the PLC.
+5.2.1.2.3 Im por ting t ags
+To import tags online, proceed as follows:
+1. Open the "Tags" tab.
+2. Right-click the 
+ icon to the right of the desired PLC.
+3. Click 
+ .
+4. Select the desired tags.
+5.2.1.2.4 Result
+The imported S7+ tags are displayed.
+Then deploy the connection to the PLC and the selected tags to the IIH Semantics. For more
+information, see Deploying S7+ tags in IIH Semantics.
+5.2.1.3 Conﬁguring the acquisition mode
+The S7+ Connector supports the following acquisition modes:
+OnChange
+Cyclic Continuous
+This setting is conﬁgured at the connection level.NO TICE
+
+48 Manual, 01/2026, A5E51720554-AK5.2.1.3.1 OnChang e
+The default setting is On Change. In On Change mode, data is only transmitted when values
+change. This conﬁguration is optimal for system load for all involved components such as the
+network, Databus, IIH Essentials, or IIH Semantics.
+The S7+ Connector operates internally on a subscription-based model. This means that the PLC
+implements change-of-value logic.
+5.2.1.3.2 Cy clic Continuous
+Some speciﬁc use cases might require Cyclic Continuous, such as machine learning applications.
+The cyclic continuous data acquisition mode sends all data upstream each cycle, even when the
+data does not change. This mode impacts the performance of the IE Device. The northbound
+gRPC connections to the Databus and/or IIH Essentials / IIH Semantics experience higher load.
+Storage utilization for the timeseries data in IIH Essentials also increases. The communication
+with the PLC is also heightened.
+5.2.1.3.3 Mix ed scenar ios
+When selected data points are needed in Cyclic Continuous mode, deﬁne a separate data source
+with Cyclic Continuous. This way, the common data points can be eﬃciently provided in the
+On Change mode in a separate data source. Meanwhile, only the required data points are
+provided in Cyclic Continuous mode.
+5.2.1.4 Deploying S7+ tags in IIH Semantics
+5.2.1.4.1 Descr iption
+On ce you conﬁgured the S7+ tags, activate the tags you need and deploy them in IIH Semantics.
+5.2.1.4.2 Deplo ying t ags
+To deploy tags, proceed as follows:
+1. Select the PLC and the tags you want to activate in the IIH.
+2. Click "Deploy".
+Manual, 01/2026, A5E51720554-AK 495.2.1.4.3 Result
+The IIH generates the conﬁguration ﬁle for the SIMATIC S7+ Connector in the background. The
+conﬁguration ﬁle is sent directly to the connector. You have now deﬁned the tags that are
+available for the IIH.
+You can ﬁnd the conﬁguration ﬁle in the "Management" tab of the IE Device.
+5.2.2 Conﬁguring via Databus (optional)
+5.2.2.1 Entering the credentials for Databus (Common Conﬁgurator)
+You need to enter the credentials to publish the S7+ data in the Databus.
+When you want to make the S7+ data directly available in the data store of the Industrial
+Information Hub, you do not need to enter any credentials.
+5.2.2.1.1 Ent er ing t he cr edentials
+To enter the credentials, proceed as follows:
+1. Open the "Settings" tab.
+2. Enter a Databus Service name.
+3. Enter the corresponding credentials in the "Data Publisher Settings" tab.
+4. Click "Save".
+50 Manual, 01/2026, A5E51720554-AK5.2.2.1.2 Result
+The connection to the Databus is established.
+5.2.2.2 Deploying S7+ tags in the Databus (Common Conﬁgurator)
+S7+ tags become available in the Databus when you enable the corresponding option for
+selected tags.
+5.2.2.2.1 Deplo ying t ags
+To deploy tags in the Databus, proceed as follows:
+1. Select the "Publish to Databus" option for all S7+ tags or for individual selected S7+ tags.
+2. Click "Deploy".
+The configuration file for the Databus Gateway is created automatically.
+5.2.2.2.2 Result
+The IIH generates the conﬁguration ﬁle for the SIMATIC S7+ Connector in the background and
+sends it to the connector. This deﬁnes which tags are available for the Databus Gateway. A
+connection is established by conﬁguring the Databus Gateway.
+The Databus subscribes to the tags that the Databus Gateway found and forwarded to the
+Databus.
+You can ﬁnd the conﬁguration ﬁles in the "Management" tab of the IE Device.
+Enter the credentials in the settings to enable the connection to the Databus.
+5.2.2.3 Conﬁguring subscriptions manually from the PLC (Databus Gateway)
+The Databus Gateway is the bridge between Industrial Edge and the Connectivity Suite. This
+allows you to make the tags available in the Databus.Credentials f or Dat abus
+
+Manual, 01/2026, A5E51720554-AK 51For information about automatic generation of the Databus Gateway conﬁguration, see
+Deploying S7+ tags in the Databus (Common Conﬁgurator).
+You can generate the conﬁguration yourself (for example, using a code generator). You must
+transfer the conﬁguration ﬁle to the IE Device.
+Deﬁne which tags to publish on the Databus. Specify the following parameters in the Databus
+Gateway conﬁguration:
+Which PLCs or conne ctions to use
+Which tags to subscribe (cyclic reading)
+The metadata topic of the Databus on which to publish the tags
+5.2.2.3.1 Updating apps
+When updating apps, consider the following:
+When you update Common Configurator, also update the Databus Gateway.
+When you only deploy tags directly to the IIH, the Databus Gateway is not required.
+5.2.2.3.2 Req uir ements
+The tags for the PLC have been deﬁned and activated.
+5.2.2.3.3 Conﬁgur ing t he connection
+To conﬁgure the connection to the Databus Gateway, proceed as follows:
+1. In the "Tags" tab, click "Publish to Databus".
+The configuration file is automatically created for the Databus Gateway.
+2. When installing the Databus Gateway app in the IEM, click "+" to create a configuration file
+(cs-connector-config.json).
+3. Specify the following parameters:
+name: Name of the PLC
+driver_instance: Name of the conne ctor instance
+52 Manual, 01/2026, A5E51720554-AKconnection_name: Must match the name of the data source that was configured in the
+IIH.
+data points > name: Must match the name of the tag that was configured in the IIH
+below the data source.
+You can find the configuration file in the "Management" tab of the Databus Gateway app.
+5.2.2.3.4 Result
+You have deﬁned which tags to publish on the Databus.
+5.2.2.4 Conﬁguring metadata topics and users (Databus)
+To use the data of the SIMATIC S7+ Connector via the Databus, you must also conﬁgure the
+Databus. In the conﬁguration, subscribe to the metadata topics used by the SIMATIC S7+
+Connector.
+For more information on the Databus conﬁguration, see Databus.
+Make sure that the user name, password, and metadata topic that you conﬁgured in the
+Databus Gateway exactly matches with these entries in the Databus conﬁguration.
+5.2.3 Migrating from SIMATIC S7 Connector
+The migration from SIMATIC S7 Connector to SIMATIC S7+ Connector is only supported for S7-
+1200/1500 controllers that are conﬁgured with Op timized S7-Protocol.
+You can migrate an existing conﬁguration from SIMATIC S7 Connector in two ways:
+Migrate at conne ctor level
+Migrate at conne ction levelUser name and pas sw ord
+NO TICE
+
+Manual, 01/2026, A5E51720554-AK 535.2.3.1 Migrating at connector level
+You can export multiple connections simultaneously at the connector level. To perform the
+connector level migration, proceed as follows:
+1. Navigate to SIMATIC S7+ Conne ctor.
+2. Select "Restore".
+3. Upload the backup file.
+The restore function supports two types of backups:
+SIMATIC S7+ Conne ctor backup
+SIMATIC S7 Conne ctor backup
+When using a SIMATIC S7 Conne ctor backup, the system automatically migrates all
+conne ctions for S7-1200/1500 that are configured with Optimized S7-Protocol.
+This migration process ensures compatibility while maintaining all connection conﬁgurations.
+5.2.3.2 Migrating at connection level
+You can migrate a single connection at the connection level. The system provides two options:
+Create a new data source from file
+Import tags for an existing data source
+5.2.3.2.1 Cr eating a ne w dat a sour ce fr om ﬁle
+1. Select "Add Data source".
+2. Choose "S7-1500 / S7-1200" from the "Communication protocol" dropdown.
+3. Select "Add from file".
+4. Click "Browse" to select your backup file.NOTICE
+
+54 Manual, 01/2026, A5E51720554-AK
+5.2.3.2.2 Im por ting t ags f or an e xis ting dat a sour ce
+1. Navigate to the data source where you want to import tags.
+2. Click "Import tags" from the toolbar.
+3. Select your backup file.
+4. Follow the import wizard to complete the process.
+Both options support backup ﬁles from SIMATIC S7 Connector.
+When migrating an existing conﬁguration at the connection level, ensure that the source
+conﬁguration contains only one connection.
+5.3 Conﬁguring PLC alarms
+5.3.1 Conﬁguring PLC alarms
+You can subscribe to PLC alarms (system events and program alarms) with the SIMATIC S7+
+Connector.
+SIMATIC S7-1500 CPUs provide full-text messages. The available languages depend on your PLC
+project.NO TICE
+
+Manual, 01/2026, A5E51720554-AK 55Alarm timestamps are always created from the source, i.e. the PLC. The parameter "use source
+timestamp" does not apply for alarms, as alarm timestamps are intrinsically tied to their
+generation at the PLC level.
+5.3.1.1 Conﬁguring alarm subscription
+The TIA Portal export contains the alarm classes in the project languages. The Common Import
+Converter inserts these alarm classes into the Config.JSON ﬁle as an embedded ﬁle. The
+Common Conﬁgurator then forwards the Config.JSON ﬁle to the SIMATIC S7+ Connector.
+To enable alarm processing, proceed as follows:
+1. Open "Edit Data source".
+2. Enable "Subscribe to the PLC alarms".
+5.3.1.1.1 Alarm languag es and Alarm clas ses
+The connector imports the "Alarm Classes" and "Available Alarm Languages" parameters from
+your TIA Portal project. The connector requires this information to provide complete alarm
+metadata to connected clients.
+Client applications can subscribe to selected alarm classes or languages. The connector
+conﬁguration must reﬂect the full information as conﬁgured in the PLC project.
+Do not change these parameters in the connector conﬁguration. Changes aﬀect all connected
+clients and make the modiﬁed data unavailable to them.
+5.3.2 Support of full-text messages
+Status information is provided via two APIs:NOTICE
+NO TICE
+
+56 Manual, 01/2026, A5E51720554-AKDriver-Event-API: Status information about the CS driver, for example driver initialized,
+configured conne ctions established.
+Alarm-Event-API: Interface for alarms. Full-text messages are provided via the Alarm-Event-
+API.
+The CS client can request the alarm metadata to enable a subscription with a speciﬁc ﬁlter
+setting. If the client does not request the alarm metadata or does not provide a ﬁlter
+conﬁguration in the subscription, it receives all alarm notiﬁcations.
+The ﬁlter settings and properties for alarm notiﬁcations of the Connectivity Suite are reproduced
+in SIMATIC S7+ Connector.
+To use the processing of full-text messages in the S7+ Connector, enable the "Subscribe to the
+PLC alarms" function. You can ﬁnd additional information in the section: Conﬁguring PLC alarms.
+All data required for conﬁguration are provided by the TIA Portal export and transferred directly
+to the Common Conﬁgurator.
+5.3.3 Metadata of alarms
+SIMATIC S7+ Connector receives the following metadata. You can use this metadata as ﬁlter
+criteria.
+Metad ata /
+Filter  criter ionFunctionality with SIMATIC S7+ Connec tor
+areas Alarm domains  of the  SIMA TIC PLC, for example Sy stem Diagno stic, Se curity Event, Display Class
+sources Conﬁ gured conne ctions  of SIMA TIC S7+ Conne ctor
+origins Not supported
+classes Alarm classes, as conﬁ gured in the  TIA project
+well-kno wn keys A collection of possible extend ed alarm properties, for example:
+AlarmInfoText
+AddlText1 … AddlText16
+ClientAlarmID
+ProducerID
+ap1 .. ap16
+lang uages Lang uages created for runtime in the  TIA Portal project
+Manual, 01/2026, A5E51720554-AK 57The classes and languages metadata can be connection-speciﬁc for each PLC.
+However, the metadata and ﬁlter conﬁguration are valid for the entire connection, which can
+serve multiple PLCs.
+5.3.4 Properties of alarm notiﬁcations
+Some of the properties of alarm notiﬁcations are speciﬁcally implemented for the SIMATIC S7+
+Connector.
+5.3.4.1 Al arm notiﬁcations for the SIMATIC S7+ Connector
+Proper ty Functionality in the SIMATIC S7+ Connec tor
+alarm ID Unique STR ING composed of PLC-speciﬁc IDs: CRID + ALID + ARID
+Example: CTR-RID8a7e0000-ALID10d-ARID8008
+area Alarm domain of the  no tiﬁcation
+Example: System Diagnostics
+source Conne ction tha t triggered the  alarm
+Example: CPU1505S-V2.1-OC-1
+timestamps So urce gene rates time stamps.
+Example: 2022-10-28T14:44:24.1798480Z
+If the  PLC clock ha s no t been sync hronized, the  no tiﬁcations  contain inc orrect time stamps.
+origin Not supported
+class Alarm classes, as conﬁ gured in the  TIA Portal project
+Example: No Acknowledgment
+alarm text Provided in the  conﬁ gured lang uages.NOTICE
+
+58 Manual, 01/2026, A5E51720554-AK 5.3.4.2 Extended alarm notiﬁcations
+Exten ded  proper ty Functionality in SIMATIC S7+ Connec tor
+AlarmInfoText If available, the  alarm info text is ind icated. SIMATIC Alarm Text Index == 0
+addlText n If available, all alarm texts who se ind ex is no t equal to 1 are ind icated as additiona l text.
+ap n If available, the  associated parameters 1 ... n are provided as part of the  extend ed properties.
+ClientAlarmID The  alarm ID of the  client is always ind icated.
+ProducerID The  ID of the  producer is always speciﬁed.
+5.3.4.3 Example of an alarm notiﬁcation
+The example shows an alarm notiﬁcation that a client receives.
+5.3.4.4 Al arm-Event-AP I notiﬁcation
+ 1 ID'CTR-RID8a7e0000-ALID10d-ARID8008'
+ 2 raise-time'2022-10-28T14:44:24.1798480Z'
+ 3 prio'0' area'System Diagnostic' source'CPU1505S-V2.7-OC-2' class'No Ack
+ 4 
+ 5 is_active 'yes' is ackn. 'n.r.' is confirmed 'n.r.'
+ 6 
+ 7 'de-DE' - 'Zustandsmeldung der CPU: CPU nicht in RUN Aktueller CPU-Betr
+ 8 'en-US' - 'CPU status message: CPU not in RUN Current CPU operating mod
+ 9 
+10 'AlarmInfoText' - 'de-DE' - 'Kurzbezeichnung: CPU general Bestellnummer
+11 'AlarmInfoText' - 'en-US' - 'Short name: CPU general Order number: 6ES7
+12 
+13 'AddlText1' - 'de-DE' - 'Software PLC_1'
+14 
+15 'AddlText1' - 'en-US' - 'Software PLC_1'
+16 
+17 'ClientAlarmID' - '35'
+18 
+19 'ProducerID' - 'System Diagnostic (Innovation PLC)'
+20 
+21 'ap0' - '01 01 00 '
+22 
+23 'ap1' - '40 04 0c 01 00 00 00 00 10 23 00 32 00 02 00 00 ...'
+5.4 Using special tags
+Manual, 01/2026, A5E51720554-AK 595.4.1 Using special tags
+Special tags are supported in S7+ Connector 1.3 in the following manner:
+The special tags are added as valid tags.
+The JSON configuration of the S7+ Conne ctor is extended with these tags.
+The special tags are integrated in the meta data.
+On ly one special tag is implemented in version 1.3:
+Nam e Addres s string Data typ e
+$$C he cksumStand ardBlocks 8721:V :userProgCRC String
+You can check the CRC of software with this special tag.
+5.4.1.1 Using special tags with IIH Essentials
+If you conﬁgure special tags in IIH Essentials, no further action is required. The S7+ Connector
+inserts the special tags in the meta data. IIH Essentials processes the meta data and shows you
+the special tags.
+5.4.1.2 Using special tags with the Common Conﬁgurator and Databus
+The Common Conﬁgurator works with conﬁguration ﬁles. If the conﬁguration is generated on
+the basis of a TIAP export, the special tags are not present.
+To include these special tags in the conﬁguration, deploy the conﬁguration in the S7+
+Connector. The S7+ Connector updates the conﬁguration. When the Common Conﬁgurator is
+once again synchronized with the S7+ Connector, the S7+ Connector gets the conﬁguration with
+the special tags.
+60 Manual, 01/2026, A5E51720554-AK6.1 Quality codes
+The Qu ality Code characterizes the quality of a value when it is transferred from a PLC to the S7+
+Connector.
+Use of the PLC time stamp in S7+ Connector aﬀects the Qu ality Code:
+Flag s
+(bits 12 ...
+15)Des cription
+Bit 12 So urce quality
+Bit 13 So urce time The  data time stamp was created and  added by an externa l data source.
+Bit 14 Time
+correctedThe  data time stamp added by an externa l data source is corrected in the
+system.
+Bit 15 Reserved
+You can ﬁnd additional information on the topic of Qu ality Codes here: Qu ality code.
+6.2 Quantity structures
+6.2.1 Maximum number of tags
+The maximum number of conﬁgurable tags for the SIMATIC S7+ Connector amounts to 40,000.
+The total number of possible tags that can be used by all clients (IIH Semantics, Databus
+Gateway, etc.) for a PLC depends on the PLC type.
+Maximum number of tags that can be used simultaneously for each PLC:
+PLC typ e Max imum number  of tag s
+S7- 1510 to S7- 1513 2,000
+S7- 1515 4,000
+S7- 1516 (and  all othe r PLCs no t na med he re) 8,000
+S7- 1517 20,000
+S7- 1518 40,000Per formance measur es 6 
+Manual, 01/2026, A5E51720554-AK 61The maximum number of tags is a total number that is shared among other connections. If
+other devices (e.g. HMI) also communicate with the PLC, the number of possible subscriptions
+for the SIMATIC S7+ Connector is reduced. Per connection a small number of tags is used for
+internal purposes (currently a maximum of ﬁve internal tags).
+The limits also depend on the ﬁrmware version, and the numbers here refer to ﬁrmware 2.9.
+For example, if an HMI uses 150 Tags and two tags are used for internal purposes, there remain
+1848 tags for a S7-1510.
+If the user conﬁgures too many tags for a PLC, the PLC does not have enough memory, and the
+log entry Not Enough Memory Available appears.
+The minimum cycle time is 100 ms for all PLC types.
+These limits are determined by the ﬁrmware of the PLC.
+The maximum number of tags cannot be combined with the lowest cycle time.
+6.2.2 SIMATIC S7+ Connector
+6.2.2.1 Read test
+6.2.2.1.1 Tes t en vir onment
+SIMATIC S7-1516-3 PN/DP
+SIMATIC IPC227E (IE Device)S
+SIMATIC S7+ Conne ctor
+Databus Gateway
+Databus
+Flow CreatorNOTICE
+
+62 Manual, 01/2026, A5E51720554-AK6.2.2.1.2 Tes t scenar io
+Number
+of tag sData
+typ eNumber  of
+connec tionsSer ver
+speedIE Device
+ac quisition
+cycleIE Device Data
+lossCPU of
+the IE
+DeviceMem ory
+in MB
+40000 INT 16 20 1 s 500m s IPC 427E 0.0055 61- 69% 135
+39998 INT 16 1 1 s 500m s IPC 427E 0 50- 60% 146
+10000 INT 16 1 200m s 100m s IPC 427E 0 58.83-
+71.90%41
+20000 INT 16 1 200m s 100m s IPC 427E 0 87.54-
+99.61%72
+23000 INT 16 1 200m s 100m s IPC 427E 0 92.46-
+109.44%83
+24000 INT 16 1 200m s 100m s IPC 427E 0.0031 92.84-
+110.45%83
+25000 INT 16 1 200m s 100m s IPC 427E 0.0589 90.59-
+101.09%87
+30000 INT 16 1 200m s 100m s IPC 427E 0.8568 99.89-
+103.22%105
+10000 INT 16 1 500m s 250m s IPC 227E 0 53.21-
+58.17%42
+10000 INT 16 1 1 s 500m s IPC 227E 0 22.94-
+30.23%38
+13000 INT 16 1 500m s 250m s IPC 227E 0.0088 71.91-
+77.61%47
+30000 INT 16 100 2000m s 1000m s SC ALANCE
+LPE94130 94% 110
+6.2.2.2 Write test
+6.2.2.2.1 Tes t en vir onment
+SIMATIC S7+ Conne ctor
+Databus Gateway
+Databus
+SIMATIC 1518F
+Manual, 01/2026, A5E51720554-AK 63SIMATIC IPC427E
+6.2.2.2.2 Tes t scenar io
+The tags are written continuously to the PLC while the subscription remains open to read value
+changes.
+Number  of
+tag sData typ es Ser ver
+speedIE Device ac quisition
+cycleData
+loss
+100 UINT8, UINT16, UINT32, INT8, INT16,
+INT32, REAL1 s 500m s 0.001
+6.2.3 Common Import Converter
+6.2.3.1 Test environment
+CS Registry
+Common Configurator
+Common Import Converter
+SIMATIC S7+ Conne ctor
+6.2.3.2 Test scenario
+Par am eter Details
+Number of tags 150,000
+Average leng th of the  tag na mes 125 cha racters
+Size of the  export ﬁle 50 MB
+The Common Import Converter converts all tags used in a TIAP project. In the next step, the
+user selects the tags he wants to record.
+Therefore, the number of tags in the Common Import Converter is much larger than in the
+SIMATIC S7+ Connector.
+6.2.3.3 Test result
+The test was successful.
+If you are processing larger export ﬁles, the conﬁgured memory for the Common Import
+Converter on the IE Device may not be suﬃcient. In this case, the conversion fails.
+For larger export ﬁles, follow all the size and quantity restrictions listed above.
+64 Manual, 01/2026, A5E51720554-AK7.1 Known restrictions
+7.1.1 Databus Gateway
+7.1.1.1 Supported JSON formats
+For publishing subscribed data points, only the JSON Timeseries Format is supported. The
+variants "JSON  Bulk" and "Binary" are not supported by the Databus Gateway.
+7.1.1.2 Conﬁguration update
+The Databus Gateway requires restart after deploying new conﬁgurations. Communication will
+be temporarily interrupted during this restart. The Service will be unavailable for a brief period.
+7.1.2 SIMATIC S7+ Connector
+7.1.2.1 Conﬁguration update
+System restart required after deploying new configurations
+During the restart process, there is a brief interruption in communication services
+7.1.2.2 Data Typ e limitations
+7.1.2.2.1 Structur ed Dat a T ypes and PL C Dat a T ypes (UD T)
+No direct support for structured data types and PLC data types (UDT)
+Individual elements must be selected separately
+7.1.2.2.2 Bool Arr ay suppor t
+Supported: Scalar Bool values and 1-dimensional arrays
+Not supported: 2-dimensional arrays (must access elements individually)
+7.1.2.2.3 String Arr ay suppor t
+Supported: Reading and writing operations
+Limitations for non-optimized data blocks:
+- Writing fails with strings configured with odd maximum string length 1)
+- Only strings with even maximum string length are written correctly 1)Limit ations 7 
+Manual, 01/2026, A5E51720554-AK 651) On ly the conﬁgured maximum string length is relevant, not the actual string length.
+Kind of data
+pointExam ple Optimized  Data
+Block (DB)Non-
+optimized  DB
+Read Write Read Write
+String , even
+max. lentext : String[32]✅ ✅✅ ✅
+String , odd max.
+lentext : String[31]✅ ✅✅ ✅
+String -array,
+even max. len
+text : Array[0..9] of
+String[32]✅ ✅✅ ✅
+String -array, odd
+max. len
+text : Array[0..9] of
+String[31]✅ ✅✅ ❌
+When working (writing) with string arrays in non-optimized DBs, ensure the maximum string
+length is even.
+7.1.2.3 PLC Timestamps
+PLC Timestamps supported only for subscriptions
+Read requests use local IE Device clock timestamps
+7.1.2.4 SIMATIC S7-1500 Software Controller
+S7-1500 Software Controller accessible only via PN interface
+7.1.2.5 Variable naming restrictions
+Supported: Unicode Characters up to U+0FFFF
+Not supported: Unicode Characters from U+10000 and above
+7.1.2.6 File size limitations
+The size of the TIA Portal Scada export ﬁle is limited to 80 MB.
+7.1.3 SIMATIC S7+ Connector and Databus Gateway
+These restrictions apply when both apps are used together.NOTICE
+
+66 Manual, 01/2026, A5E51720554-AKFunction Support by Datab us Gateway
+Su bscribe tags Su pported 1)
+Write tags Su pported 1)
+Read tags Not supported
+Driver Status Events Su pported
+PLC alarms Not supported
+1) The SIMATIC S7+ Connector and Databus Gateway support all SIMATIC basic data types
+including DTL, String and WString (except the outdated types Counter and Timer).
+Single values and 1-dimensional arrays are supported, n-dimensional arrays are supported only
+for Subscription, not for Write.
+7.1.4 Al l CS Connectors
+Diagnostics are available only to a limited extent, e.g. based on the app log file.
+No support of data records.
+7.1.5 Common Conﬁgurator
+Databus Gateway configuration: Dedicated Device data types are not supported. The
+Databus Gateway uses default edge data types.
+This restriction applies only if you create the configuration of the subscriptions with the
+Common Configurator. If you create the configuration manually, there are no restrictions.
+S7+ Conne ctor Configuration: Manual addition of tags for S7+ Connector is not supported
+due to the missing type-safe address information. Use Browsing or Import instead.
+7.1.6 System diagnosis
+At the moment, the system diagnosis functionality is limited. If an Industrial Edge App does not
+operate as expected, the application log ﬁle can be a useful source for troubleshooting.
+Manual, 01/2026, A5E51720554-AK 67
