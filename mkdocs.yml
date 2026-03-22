@@ -11,6 +11,12 @@ nav:
       - Agent Layer: experiments/agent-layer.md
   - TIL: til/index.md
   - Now: now.md
+  - Samples:
+      - samples/index.md
+      - API Reference Guide: samples/api-reference/index.md
+      - End-User Manual: samples/user-manual/index.md
+      - Release Notes: samples/release-notes/index.md
+      - DocScanner: samples/doc-scanner/index.md
 
 theme:
   name: material
