@@ -1,78 +1,131 @@
-# End-User Manual: SIMATIC S7+ Connector
+# SIMATIC S7+ Connector – User Manual
 
-This is a sample interactive end-user manual created dynamically from an uploaded PDF. It demonstrates the use of **Admonitions**, **Tables**, **Tabs**, and **Code Blocks** common in modern technical documentation.
+## 1. Introduction
 
----
+### 1.1 Purpose
+The SIMATIC S7+ Connector is a south-bound application designed to connect data from S7-1200/1500 PLCs, PLCSim Advanced, and Siemens Software Controllers with the Industrial Edge platform. It enables seamless data collection using the optimized S7 protocol.
 
-## 1. Introduction to SIMATIC S7+ Connector
+### 1.2 Scope
+This manual covers:
+- System requirements and installation.
+- Online and offline configuration workflows.
+- Supported data types and timestamping.
+- PLC alarm subscriptions and troubleshooting.
 
-Welcome to the SIMATIC S7+ Connector documentation for Industrial Edge.
+*Not covered: TIA Portal PLC programming or hardware electrical wiring.*
 
-The SIMATIC S7+ Connector is a south-bound connector that connects data from S7-1200/1500 PLCs, PLCSim Advanced, and Siemens Software Controller with Industrial Edge. Connectors are essential to collect data from various PLCs and devices and make it available on the Industrial Edge system. 
+### 1.3 Target Audience
+This manual is intended for plant operators, facility managers, and system integrators responsible for data acquisition in Industrial Edge environments.
 
-With the S7+ Connector, data can be accessed via the optimized S7 protocol. This connector is developed as a Connectivity Suite Connector and therefore supports standardized configuration as well as data transfer.
-
-!!! tip "Common Configurator"
-    The Common Configurator configures the Connector and is available free of charge in the Industrial Edge Marketplace.
-
-### Security Information
-
-Siemens provides products and solutions with industrial cybersecurity functions that support the secure operation of plants, systems, machines, and networks.
-
-!!! danger "Unauthorized Access"
-    Customers are responsible for preventing unauthorized access to their plants, systems, machines and networks. Systems should only be connected to an enterprise network or the internet if appropriate security measures (e.g., firewalls and network segmentation) are in place.
-
-!!! warning "Product Updates"
-    Siemens strongly recommends that product updates are applied as soon as they are available. Failure to apply the latest updates may increase customer's exposure to cyber threats.
+### 1.4 Related Documents
+- [Industrial Edge Platform Documentation](https://tharun135.github.io/)
+- [API Reference Guide](../api-reference/index.md)
+- [Release Notes](../release-notes/index.md)
 
 ---
 
-## 2. Requirements and Time Synchronization
+## 2. Getting Started
 
-Both the PLC and the Industrial Edge (IE) Device must use time synchronization (for example, NTP). Without synchronization, the times of the two devices become out of sync.
+### 2.1 Prerequisites
+- **IE Device-OS:** V2.1 or later.
+- **Common Configurator:** V2.0 or later.
+- **Memory Requirements:** 2 GB RAM and 10 GB available hard disk space.
+- **Web Browsers:** Google Chrome (v72+) or Firefox (v62+).
 
-### Firmware Minimum Requirements
+### 2.2 Installation / Access
+The installation process involves transferring the app from the Industrial Edge Hub to your local device.
 
-To configure the PLC time stamp, you must meet the following firmware versions:
+1. **Copy to IEM:** Open the IE Hub Library, select the S7+ Connector, and click "Copy to IEM".
+2. **Install on Device:** Open your IEM instance, select the app from the catalog, and click "Install". Choose your target IE Device.
+3. **Start App:** Once installed, the app status will update to "Running" in your device dashboard.
 
-=== "S7-1500"
-    - **Minimum Firmware:** V2.6 
-    - **Required Software:** TIA Portal V15.1 or newer
+!!! abstract "Installation Walkthrough"
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://players.brightcove.net/1813624294001/f83fb7f6-75c0-411c-872c-ab6095a19211_default/index.html?videoId=6338443126112" 
+                allowfullscreen 
+                webkitallowfullscreen 
+                mozallowfullscreen 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
+    </div>
 
-=== "S7-1200"
-    - **Minimum Firmware:** V4.4 
-    - **Required Software:** TIA Portal V16 or newer
-
----
-
-## 3. Supported Data Types
-
-Data Types from a PLC must be implicitly converted in order to use them in an IE Device. The data types are converted from S7-1500/1200 PLC data types to Connectivity Suite Data Types, and then into the corresponding Industrial Edge Data Types.
-
-| S7-1500/1200 Type | Connectivity Suite Type | Length (bits) | Edge Data Type | JSON Value Type |
-| :--- | :--- | :--- | :--- | :--- |
-| **Bool** | Bool | 1 | Bool | Integer |
-| **Byte** | UInt8 | 8 | USInt | Integer |
-| **Word** | UInt16 | 16 | UInt | Integer |
-| **DWord** | UInt32 | 32 | UDInt | Integer |
-| **LWord** | UInt64 | 64 | ULInt | String |
-| **SInt** | Int8 | 8 | SInt | Integer |
-| **Real** | Float32 | 32 | Real | Floating-point |
-| **String** | String | 8 (per char) | String | String |
-
-!!! info "About Array Support"
-    Arrays are provided in the Common Configurator as a single tag. SIMATIC S7+ Connector supports arrays of default data types, including `String`, `WString` and `DTL`. It provides all individual elements of an array as separate tags and also the whole array as one common tag in a JSON file.
+### 2.3 First-Time Setup
+1. Log in to your IE Device home page.
+2. Launch the **Common Configurator** app.
+3. Open the **Get Data** tab.
+4. Select **SIMATIC S7+ Connector** from the list of available connectors to begin configuration.
 
 ---
 
-## 4. Configuring the PLC Time Stamp
+## 3. Key Concepts
 
-All tags receive a time stamp. You can activate the PLC time stamp (Source Timestamp) or use the connector time stamp for subscribed tags. 
+- **Connector:** A southbound application that translates device-specific protocols (like S7+) into standardized Industrial Edge data formats.
+- **Common Configurator:** A centralized user interface used to manage all data sources, connections, and tags across different connectors.
+- **IIH (Industrial Information Hub):** The core service where data is stored, modeled, and made available for high-level applications.
 
-| Parameter | Value | Description |
+---
+
+## 4. How to Use (Core Tasks)
+
+### 4.1 Configure Data Source (Online)
+**Goal:** Automatically detect and import tags from a physically connected PLC.
+
+**Steps:**
+1. Open the **Tags** tab in the Common Configurator.
+2. Right-click the icon next to the desired PLC data source.
+3. Click **Browse** to see available tags on the live controller.
+4. Select the tags you wish to monitor and click **Apply**.
+
+**Result:** The selected tags are now activated and streaming data to the IIH.
+
+---
+
+### 4.2 Configure Data Source (Offline)
+**Goal:** Import tags using a TIA Portal project export when the PLC is not yet connected.
+
+**Steps:**
+1. Export the tags from TIA Portal using the **SIMATIC SCADA Export** add-on.
+2. In the Common Configurator, select **Add Data Source** -> **Add from File**.
+3. Upload the generated **ZIP/JSON** export file.
+4. Map the imported tags to your current connection.
+
+**Result:** Configuration is completed offline and will activate once the device is connected to the network.
+
+---
+
+## 5. Advanced Configuration
+
+### 5.1 Configuration Options
+
+| Parameter | Description | Default |
 | :--- | :--- | :--- |
-| `use_source_timestamp` | `True` / `False` | Activates the PLC time stamp. |
-| `max_source_timestamp_diff` | `Int` | The maximum acceptable differential value in seconds. <br/> - **0 sec**: the difference is not checked. PLC time is used. <br/> - **n sec**: when the difference between PLC and connector exceeds `n`, the local time stamp is used. |
+| `use_source_timestamp` | If enabled, uses the time generated by the PLC instead of the Edge device. | `False` |
+| `acquisition_mode` | `OnChange` only sends data when values change; `Cyclic Continuous` sends data every cycle. | `OnChange` |
+| `max_source_timestamp_diff` | Maximum allowed difference (in seconds) before falling back to local time. | `0` |
 
-!!! caution "Alarm Timestamps vs Data Subscriptions"
-    When configuring both data subscriptions and alarm subscriptions, it is strongly recommended to enable **"Source Timestamp"** for your data subscriptions. Alarm timestamps are always generated and provided by the PLC. Using the Source Timestamp ensures a unified and accurate timeline across all your subscribed information.
+---
+
+## 6. Troubleshooting
+
+| Issue | Possible Cause | Solution |
+| :--- | :--- | :--- |
+| **PLC not reachable** | Invalid IP address or network segmentation. | Verify IP settings and ensure firewall allows S7 protocol. |
+| **Login Failed (401)** | Incorrect CPU password or UMAC credentials. | Check legitimization settings in TIA Portal and Configurator. |
+| **TLS Error** | Mismatched or expired end-entity certificate. | Re-import certificates using the Common Import Converter. |
+
+---
+
+## 7. Glossary
+
+- **IEM:** Industrial Edge Management.
+- **PLC:** Programmable Logic Controller.
+- **TIA Portal:** Totally Integrated Automation Portal.
+- **UMAC:** User Management & Access Control.
+
+---
+
+## 8. Appendix
+
+### Error Codes
+- **UNAVAILABLE (14):** PLC is not reachable on the network.
+- **INVALID_ARGUMENT (3):** Incorrect connection parameters or malformed JSON.
+- **UNAUTHENTICATED (16):** TLS verification failed or wrong password.
