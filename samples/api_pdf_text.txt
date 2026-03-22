@@ -1,0 +1,974 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15Indus trial Edg e
+IIH Es sentials API
+ManualPreface
+Adap ter s
+Agg reg ations
+AlarmS tor ag e
+Aspects
+AspectT ypes
+As se ts
+Bac kup
+Calculat e
+Calculat eJobCollections
+Dat a
+Dat aDes tination
+Dat aR etention
+Dat aSour ce
+Dat aSync
+2 Manual, 02/2026, A5E53813724-AF16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30Des tinationHier archy
+Ser vice
+Sync hr onization
+VariableConﬁgur ations
+Variables
+Anc hor Aspects
+Anc hor AspectT ypes
+Anc hor As se ts
+Anc hor As se tTypes
+Anc hor A ttr ibut es
+Anc hor A ttr ibut eT ypes
+Anc hor Me tadat a
+Anc hor R efer ences
+Anc hor R efer enceT ypes
+Anc hor R elations
+Manual, 02/2026, A5E53813724-AF 331
+32
+33
+34
+35
+36Anc hor R elation Types
+Anc hor V iews
+Anc hor A ttr ibut es (e x)
+Anc hor Entities (e x)
+Anc hor T reeIt ems (e x)
+Anc hor Or iginat or s (e x)
+v2.4
+02/2026
+A5E53813724-AF
+4 Manual, 02/2026, A5E53813724-AFNOTICE
+This document was downloaded from the following site:
+https://docs.industrial-operations-x.siemens.cloud
+Siemens assumes no liability for the accuracy, completeness, or timeliness of the data
+provided.
+Use is at your own risk.
+Legal information
+Warning notice system
+This manual contains notices you have to observe in order to ensure your personal safety, as
+well as to prevent damage to property. The notices referring to your personal safety are
+highlighted in the manual by a safety alert symbol, notices referring only to property damage
+have no safety alert symbol. These notices shown below are graded according to the degree of
+danger.
+ DAN GER
+indicates that death or severe personal injury will result if proper precautions are not taken.
+ WAR NING
+indicates that death or severe personal injury may result if proper precautions are not taken.
+ CAUTION
+indicates that minor personal injury can result if proper precautions are not taken.
+NOTICE
+indicates that property damage can result if proper precautions are not taken.
+If more than one degree of danger is present, the warning notice representing the highest
+degree of danger will be used. A notice warning of injury to persons with a safety alert symbol
+may also include a warning relating to property damage.
+Qualiﬁed Personnel
+The product/system described in this documentation may be operated only by personnel
+qualiﬁed for the speciﬁc task in accordance with the relevant documentation, in particular its
+warning notices and safety instructions. Qu aliﬁed personnel are those who, based on their
+training and experience, are capable of identifying risks and avoiding potential hazards when
+working with these products/systems.
+Manual, 02/2026, A5E53813724-AF 5Proper use of Siemens products
+Note the following:
+ WAR NING
+Siemens products may only be used for the applications described in the catalog and in the
+relevant technical documentation. If products and components from other manufacturers are
+used, these must be recommended or approved by Siemens. Proper transport, storage,
+installation, assembly, commissioning, operation and maintenance are required to ensure
+that the products operate safely and without any problems. The permissible ambient
+conditions must be complied with. The information in the relevant documentation must be
+observed.
+Trademarks
+All names identiﬁed by ® are registered trademarks of Siemens Aktiengesellschaft. The
+remaining trademarks in this publication may be trademarks whose use by third parties for their
+own purposes could violate the rights of the owner.
+Disclaimer of Liability
+We have reviewed the contents of this publication to ensure consistency with the hardware and
+software described. Since variance cannot be precluded entirely, we cannot guarantee full
+consistency. However, the information in this publication is reviewed regularly and any
+necessary corrections are included in subsequent editions.
+Siemens  Aktieng esellscha ft
+Digital Ind ustries
+Postfach 48 48
+90026 NÜRNBERG
+GERMA NYA5E 53813724- AF
+02/2026 Su bject to cha ng eCopyright © Siemens  2026.
+All rights reserved
+6 Manual, 02/2026, A5E53813724-AF13
+13
+14
+14
+15
+21
+24
+30
+33
+36
+38
+40
+41
+43
+43
+44
+49
+52
+57
+59
+61
+63
+63
+64
+67
+76
+80
+89
+93
+97
+103
+103
+105
+108
+110
+114
+116Table of cont ents
+1  Preface
+1.1  Servers
+2  Adapters
+2.1  Get all adapters.
+2.2  Create a new adapter.
+2.3  Read an adapter.
+2.4  Update an adapter.
+2.5  Delete an adapter.
+2.6  Write values via adapter.
+2.7  Browse adapter.
+2.8  Get all available adapters.
+2.9  Get used disk space by adapters.
+2.10  Get alarm metadata from corresponding adapter
+3  Aggregations
+3.1  Get all aggregations
+3.2  Create an aggregation.
+3.3  Read an aggregation
+3.4  Update an aggregation.
+3.5  Delete an aggregation.
+3.6  Reset an aggregation
+3.7  Get used disk space by aggregations.
+4  Al armStorage
+4.1  Get total alarm channel count
+4.2  Get alarm channels
+4.3  Create a new alarm channel
+4.4  Get alarm channel by channel id
+4.5  Update alarm channel by alarm channel id
+4.6  Delete alarm channel by alarm channel id
+4.7  Create alarms
+4.8  Qu ery alarms by ﬁlter
+5  As pects
+5.1  Get all aspects.
+5.2  Create an aspect.
+5.3  Read an aspect.
+5.4  Update an aspect.
+5.5  Delete an aspect.
+5.6  Get used disk space by aspects.
+Manual, 02/2026, A5E53813724-AF 7117
+120
+123
+126
+126
+127
+130
+133
+137
+139
+142
+142
+145
+149
+152
+157
+160
+162
+164
+167
+169
+171
+172
+175
+179
+182
+182
+183
+195
+198
+199
+201
+204
+207
+208
+211
+211
+216
+223
+223
+226
+228
+2305.7  Create a set of aspects.
+5.8  Update a set of aspects.
+5.9  Delete a set of aspects.
+6  As pectTyp es
+6.1  Get all aspect types.
+6.2  Create an aspect type.
+6.3  Read an aspect type.
+6.4  Update an aspect type.
+6.5  Delete a non system aspect type, which is not used.
+6.6  Get used disk space by aspect types.
+7  As sets
+7.1  Get all assets.
+7.2  Create an asset.
+7.3  Read an asset.
+7.4  Update an asset.
+7.5  Delete an asset.
+7.6  Get the root asset.
+7.7  Read all child asset.
+7.8  Read all descendent assets.
+7.9  Read all breadcrumb.
+7.10  Get the asset tree.
+7.11  Get used disk space by assets.
+7.12  Create a set of assets.
+7.13  Update a set of assets.
+7.14  Delete a set of assets.
+8  Backup
+8.1  Get the conﬁguration backup.
+8.2  Restore the conﬁguration backup.
+8.3  Restore the conﬁguration backup as multipart ﬁle upload.
+8.4  Get the data backup.
+8.5  Restore the data backup.
+8.6  Get the txt export of a single variable.
+8.7  Restore the exported txt ﬁle into a variable.
+8.8  Get the alarm data backup.
+8.9  Restore the alarm data backup.
+9  Calculate
+9.1  Calculate an aggregated value.
+9.2  Calculate a trend of aggregated values.
+10  CalculateJobCollections
+10.1  Create calculate-job collection.
+10.2  Get all job calculation ids
+10.3  Get the state of a calculate-job collection.
+10.4  Abort and delete calculate-job collection.
+8 Manual, 02/2026, A5E53813724-AF232
+234
+234
+238
+243
+247
+252
+255
+260
+263
+264
+266
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+010.5  Abort a single calculate job of a calculate-job collection.
+11  Data
+11.1  Read data of multiple variables.
+11.2  Write data of multiple variables.
+11.3  Delete data of multiple variables.
+11.4  Get timeseries data of multiple variables.
+11.5  Read data of a single variable.
+11.6  Write data of a single variable.
+11.7  Delete data of single variable.
+11.8  Get database size.
+11.9  Get data size.
+11.10  Count data.
+11.11  Get data delta.
+12  DataDestination
+12.1  Get all data destinations.
+12.2  Create a new data destination.
+12.3  Read a data destination.
+12.4  Update a data destination.
+12.5  Delete a data destination.
+12.6  Test a data destination.
+13  DataRetention
+13.1  Get the data retention setting.
+13.2  Update the data retention setting.
+13.3  Get the data retention setting with inherited setting optionally.
+13.4  Get used disk space by data retentions.
+14  DataSource
+14.1  Get datasources.
+14.2  Resolve datasources.
+15  DataSyn c
+15.1  Get all data syncs.
+15.2  Create a new data sync.
+15.3  Read a data sync.
+15.4  Update a data sync.
+15.5  Delete a data sync.
+15.6  Get the erros of a data sync.
+16  DestinationHierarchy
+16.1  Get a list of destination hierarchies.
+16.2  Create a new destination hierarchy.
+16.3  Get a destination hierarchy.
+16.4  Update a destination hierarchy.
+16.5  Delete a destination hierarchy.
+16.6  Create a set of new destination hierarchies.
+Manual, 02/2026, A5E53813724-AF 90
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+016.7  Update a set of new destination hierarchies.
+16.8  Delete a set of new destination hierarchies.
+17  Service
+17.1  Get version.
+17.2  Check if dataservice is running.
+18  Syn chronization
+18.1  Get all synchronization channels.
+18.2  Create a new synchronization channel.
+18.3  Read a synchronization channel.
+18.4  Update a synchronization channel.
+18.5  Delete a synchronization channel.
+18.6  Get all synchronization children.
+18.7  Create a new synchronization child.
+18.8  Read a synchronization child.
+18.9  Update a synchronization child.
+18.10  Delete a synchronization child.
+18.11  Delete synchronized objects.
+18.12  Release synchronized objects.
+18.13  Release synchronized object subtree.
+19  VariableConﬁgurations
+19.1  Get a variable conﬁguration.
+19.2  Update a variable conﬁguration.
+19.3  Delete a variable conﬁguration.
+19.4  Get used disk space by variable conﬁgurations.
+20  Variables
+20.1  Get all variables.
+20.2  Create an variable.
+20.3  Read a variable.
+20.4  Update a variable.
+20.5  Delete a variable.
+20.6  Get used disk space by variable variables.
+20.7  Get the total number of variables.
+20.8  Get the total number of variables which mapped to data source.
+20.9  Create a set of variables.
+20.10  Update a set of variables.
+20.11  Delete a set of variables.
+20.12  Validate a rule.
+20.13  Execute a rule.
+21  An chor As pects
+21.1  Creates an aspect.
+21.2  Returns all aspects.
+21.3  Returns an aspect.
+21.4  Removes an aspect.
+10 Manual, 02/2026, A5E53813724-AF0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+022  An chor As pectTyp es
+22.1  Creates an aspect type.
+22.2  Returns all aspect types.
+22.3  Returns an aspect type.
+22.4  Removes an aspect type.
+23  An chor As sets
+23.1  Creates an asset.
+23.2  Returns all assets.
+23.3  Returns an asset.
+23.4  Removes an asset.
+24  An chor As setTyp es
+24.1  Creates an asset type.
+24.2  Returns all asset types.
+24.3  Returns an asset type.
+24.4  Removes an asset type.
+25  An chor Attributes
+25.1  Returns the value of an attribute.
+25.2  Updates the value of an attribute.
+25.3  Deletes an attribute.
+25.4  Returns all attributes that belong to an entity.
+25.5  Creates an attribute.
+25.6  Returns the value of an attribute.
+25.7  Updates the value of an attribute.
+25.8  Deletes an attribute.
+26  An chor AttributeTyp es
+26.1  Creates a new AttributeType.
+26.2  Returns all AttributeTypes.
+26.3  Returns the requested AttributeType.
+26.4  Removes an AttributeType.
+27  An chor Metadata
+27.1  Returns the metadata for any element of interest.
+27.2  Updates metadata for a given element.
+27.3  Deletes the metadata for a given element.
+28  An chor References
+28.1  Creates a Reference.
+28.2  Returns all References.
+28.3  Returns a Reference.
+28.4  Deletes a Reference.
+29  An chor ReferenceTyp es
+29.1  Creates a ReferenceType.
+29.2  Returns all ReferenceTypes.
+29.3  Returns a ReferenceType.
+Manual, 02/2026, A5E53813724-AF 110
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+029.4  Deletes a Reference.
+30  An chor Relations
+30.1  Creates a Relation.
+30.2  Returns all Relations.
+30.3  Returns a Relation.
+30.4  Deletes a Relation.
+31  An chor RelationTyp es
+31.1  Creates a RelationType.
+31.2  Returns all RelationTypes.
+31.3  Returns a RelationType.
+31.4  Deletes a RelationType.
+32  An chor Views
+32.1  Creates a view
+32.2  Returns all views.
+32.3  Returns a view.
+32.4  Deletes a view.
+33  An chor Attributes (ex)
+33.1  Returns the requested Attribute.
+33.2  Deletes an attribute.
+33.3  Updates an attribute.
+33.4  Returns all attributes.
+33.5  Creates an attribute.
+33.6  Returns all paths of the speciﬁed Attribute.
+34  An chor Entities (ex)
+34.1  Get the root asset of the IIH tree.
+35  An chor TreeItems (ex)
+35.1  Returns all child TreeItems from a parent TreeItem.
+35.2  Find a tree item by its path.
+35.3  Returns the TreeItem speciﬁed via anchor.
+35.4  Return the entity linked to a TreeItem.
+35.5  Returns all paths of the speciﬁed TreeItem.
+36  An chor Originators (ex)
+36.1  Get all originators.
+36.2  Create a new originator.
+36.3  Read an originator speciﬁed via id.
+36.4  Update an originator.
+36.5  Delete an originator.
+36.6  Release all objects associated with an originator.
+36.7  Attach an object to an originator.
+36.8  Release a single object and its underlying elements associated with an originator
+12 Manual, 02/2026, A5E53813724-AF
+Manual, 02/2026, A5E53813724-AF 13Description of the REST API of IIH Essentials.
+The maximum size limit for a single request (no ﬁle) is 16 MB.
+The connection timeout is 10 seconds.
+Based on Anchor Asset API speciﬁcation v1.0.
+The property $anchor of the schema AggregationValue will be renamed to $pointer in the next
+version.
+In all APIs, 'variableId' is equivalent to the anchor of an attribute
+Version: 2.4.0
+1.1 Servers
+http://localhost:4203
+locally running iih essentials
+http://edgeappdataservice:4203
+iih essentials running in docker container
+https://{ip_or_address_of_ied}/iih-essentials
+route to iih essentials on iedPreface 1 
+14 Manual, 02/2026, A5E53813724-AF2.1 Get all adapters.
+get /DataService/Adapters
+Get a list of all available Adapters.
+CLIENT REQUESTBash+curl
+curl -X 'GET'
+-H 'Accept: application/json'
+'http://localhost:4203/DataService/Adapters'
+import http.client conn = http.client.HTTPConnection("localhost:4203")
+conn.request("GET", "/DataService/Adapters") res = conn.getresponse() data =
+res.read() print(data.decode("utf-8"))
+require 'uri' require 'net/http' url =
+URI("http://localhost:4203/DataService/Adapters") http = Net::HTTP.new(url.host,
+url.port) request = Net::HTTP::Get.new(url) response = http.request(request) puts
+response.read_body
+const data = null; const xhr = new XMLHttpRequest(); xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () { if (this.readyState ===
+this.DONE) { console.log(this.responseText); } }); xhr.open("GET",
+"http://localhost:4203/DataService/Adapters"); xhr.send(data);
+HttpResponse<String> response =
+Unirest.get("http://localhost:4203/DataService/Adapters") .asString();
+import Foundation let request = NSMutableURLRequest(url: NSURL(string:
+"http://localhost:4203/DataService/Adapters")! as URL, cachePolicy:
+.useProtocolCachePolicy, timeoutInterval: 10.0) request.httpMethod = "GET" let
+session = URLSession.shared let dataTask = session.dataTask(with: request as
+URLRequest, completionHandler: { (data, response, error) -> Void in if (error !=
+nil) { print(error) } else { let httpResponse = response as? HTTPURLResponse
+print(httpResponse) } }) dataTask.resume()
+<?php $curl = curl_init(); curl_setopt_array($curl, [ CURLOPT_PORT => "4203",
+CURLOPT_URL => "http://localhost:4203/DataService/Adapters",
+CURLOPT_RETURNTRANSFER => true, CURLOPT_ENCODING => "", CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 30, CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => "GET", ]); $response = curl_exec($curl); $err =
+curl_error($curl); curl_close($curl); if ($err) { echo "cURL Error #:" . $err; }
+else { echo $response; }
+CURL *hnd = curl_easy_init(); curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST,
+"GET"); curl_easy_setopt(hnd, CURLOPT_URL,
+"http://localhost:4203/DataService/Adapters"); CURLcode ret =
+curl_easy_perform(hnd);
+var client = new RestClient("http://localhost:4203/DataService/Adapters"); var
+request = new RestRequest(Method.GET); IRestResponse response =
+client.Execute(request);Adap ter s 2 
+Manual, 02/2026, A5E53813724-AF 15Responses
+Success
+Body
+application/json
+adaptersarray
+[
+idstring
+namestring
+typestring (Enum)
+lockedboolean
+true, if this adapter is a default system adapter, which cannot be changed.
+activeboolean
+true, if this adapter is enabled.
+isDefaultboolean
+canBrowseboolean
+true, if this type of adapter supports browsing.
+connectedboolean
+conﬁgobject
+Adapter type speciﬁc conﬁguration.
+errorobject
+connectorInfoobject
+]
+RESPONSE
+{ "adapters": [ { "id": "profinet", "name": "Profinet IO Connector", "type":
+"simaticadapter", "locked": true, "active": true, "isDefault": false, "canBrowse":
+true, "connected": false, "config": { "useDatabusSettings": false, "brokerURL":
+"tcp://ie-databus:1883", "username": "", "password": "", "browseURL":
+"ie/m/j/simatic/v1/pnhs1/dp" }, "error": { "service": "example", "state": 404,
+"stateText": "NotFound", "errorCode": 4, "errorKey": "NotFound", "message": "The
+Variable with the id a12c96e4fbda472da3ffe481f06f0adb2 was not found.",
+"errorParams": { "value": "example" }, "debugInfo": { "value": "example" } },
+"connectorInfo": { "state": "available", "reason": "example", "timestamp": "2020-
+01-01T12:00:00Z", "connections": [ { "name": "example", "state": "good", "reason":
+"example", "timestamp": "2020-01-01T12:00:00Z" } ] } } ] }
+2.2 Create a new adapter.
+post /DataService/Adapters
+Create a new adapter. Name must be unique and not empty, 'locked' must be set to false.
+CLIENT REQUESTBash+curl
+curl -X 'POST'
+-H 'Accept: application/json'
+-H 'Content-Type: application/json'
+'http://localhost:4203/DataService/Adapters'
+-d '{ "connected" : false, "isDefault" : false, "connectorInfo" : { "reason"
+: "reason", "state" : "", "connections" : [ { "reason" : "reason", "name" :
+16 Manual, 02/2026, A5E53813724-AF
+"name", "state" : "", "timestamp" : "2000-01-23T04:56:07.000+00:00" }, {
+"reason" : "reason", "name" : "name", "state" : "", "timestamp" : "2000-01-
+23T04:56:07.000+00:00" } ], "timestamp" : "2000-01-23T04:56:07.000+00:00" },
+"name" : "Profinet IO Connector", "active" : true, "canBrowse" : true, "id" :
+"profinet", "type" : "simaticadapter", "locked" : true, "error" : {
+"errorKey" : "NotFound", "stateText" : "NotFound", "service" : "DataService",
+"errorCode" : 4, "state" : 404, "debugInfo" : { "value" : "value" },
+"message" : "The Variable with the id a12c96e4fbda472da3ffe481f06f0adb2 was
+not found.", "errorParams" : { "value" : "value" } }, "config" : {
+"brokerURL" : "tcp://ie-databus:1883", "password" : "", "browseURL" :
+"ie/m/j/simatic/v1/pnhs1/dp", "useDatabusSettings" : false, "username" : "" }
+}'
+import http.client conn = http.client.HTTPConnection("localhost:4203") payload =
+"{\"name\":\"Profinet IO
+Connector\",\"active\":true,\"isDefault\":false,\"canBrowse\":true,\"config\":
+{\"useDatabusSettings\":false,\"brokerURL\":\"tcp://ie-
+databus:1883\",\"username\":\"\",\"password\":\"\",\"browseURL\":\"ie/m/j/simatic/v1/pnhs1/dp\"}
+headers = { 'content-type': "application/json" } conn.request("POST",
+"/DataService/Adapters", payload, headers) res = conn.getresponse() data =
+res.read() print(data.decode("utf-8"))
+require 'uri' require 'net/http' url =
+URI("http://localhost:4203/DataService/Adapters") http = Net::HTTP.new(url.host,
+url.port) request = Net::HTTP::Post.new(url) request["content-type"] =
+'application/json' request.body = "{\"name\":\"Profinet IO
+Connector\",\"active\":true,\"isDefault\":false,\"canBrowse\":true,\"config\":
+{\"useDatabusSettings\":false,\"brokerURL\":\"tcp://ie-
+databus:1883\",\"username\":\"\",\"password\":\"\",\"browseURL\":\"ie/m/j/simatic/v1/pnhs1/dp\"}
+response = http.request(request) puts response.read_body
+const data = JSON.stringify({ "name": "Profinet IO Connector", "active": true,
+"isDefault": false, "canBrowse": true, "config": { "useDatabusSettings": false,
+"brokerURL": "tcp://ie-databus:1883", "username": "", "password": "", "browseURL":
+"ie/m/j/simatic/v1/pnhs1/dp" } }); const xhr = new XMLHttpRequest();
+xhr.withCredentials = true; xhr.addEventListener("readystatechange", function () {
+if (this.readyState === this.DONE) { console.log(this.responseText); } });
+xhr.open("POST", "http://localhost:4203/DataService/Adapters");
+xhr.setRequestHeader("content-type", "application/json"); xhr.send(data);
+HttpResponse<String> response =
+Unirest.post("http://localhost:4203/DataService/Adapters") .header("content-type",
+"application/json") .body("{\"name\":\"Profinet IO
+Connector\",\"active\":true,\"isDefault\":false,\"canBrowse\":true,\"config\":
+{\"useDatabusSettings\":false,\"brokerURL\":\"tcp://ie-
+databus:1883\",\"username\":\"\",\"password\":\"\",\"browseURL\":\"ie/m/j/simatic/v1/pnhs1/dp\"}
+.asString();
+import Foundation let headers = ["content-type": "application/json"] let
+parameters = [ "name": "Profinet IO Connector", "active": true, "isDefault":
+false, "canBrowse": true, "config": [ "useDatabusSettings": false, "brokerURL":
+"tcp://ie-databus:1883", "username": "", "password": "", "browseURL":
+"ie/m/j/simatic/v1/pnhs1/dp" ] ] as [String : Any] let postData =
+JSONSerialization.data(withJSONObject: parameters, options: []) let request =
+NSMutableURLRequest(url: NSURL(string:
+"http://localhost:4203/DataService/Adapters")! as URL, cachePolicy:
+.useProtocolCachePolicy, timeoutInterval: 10.0) request.httpMethod = "POST"
+request.allHTTPHeaderFields = headers request.httpBody = postData as Data let
+session = URLSession.shared let dataTask = session.dataTask(with: request as
+Manual, 02/2026, A5E53813724-AF 17
+URLRequest, completionHandler: { (data, response, error) -> Void in if (error !=
+nil) { print(error) } else { let httpResponse = response as? HTTPURLResponse
+print(httpResponse) } }) dataTask.resume()
+<?php $curl = curl_init(); curl_setopt_array($curl, [ CURLOPT_PORT => "4203",
+CURLOPT_URL => "http://localhost:4203/DataService/Adapters",
+CURLOPT_RETURNTRANSFER => true, CURLOPT_ENCODING => "", CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 30, CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => "POST", CURLOPT_POSTFIELDS => "{\"name\":\"Profinet IO
+Connector\",\"active\":true,\"isDefault\":false,\"canBrowse\":true,\"config\":
+{\"useDatabusSettings\":false,\"brokerURL\":\"tcp://ie-
+databus:1883\",\"username\":\"\",\"password\":\"\",\"browseURL\":\"ie/m/j/simatic/v1/pnhs1/dp\"}
+CURLOPT_HTTPHEADER => [ "content-type: application/json" ], ]); $response =
+curl_exec($curl); $err = curl_error($curl); curl_close($curl); if ($err) { echo
+"cURL Error #:" . $err; } else { echo $response; }
+CURL *hnd = curl_easy_init(); curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST,
+"POST"); curl_easy_setopt(hnd, CURLOPT_URL,
+"http://localhost:4203/DataService/Adapters"); struct curl_slist *headers = NULL;
+headers = curl_slist_append(headers, "content-type: application/json");
+curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers); curl_easy_setopt(hnd,
+CURLOPT_POSTFIELDS, "{\"name\":\"Profinet IO
+Connector\",\"active\":true,\"isDefault\":false,\"canBrowse\":true,\"config\":
+{\"useDatabusSettings\":false,\"brokerURL\":\"tcp://ie-
+databus:1883\",\"username\":\"\",\"password\":\"\",\"browseURL\":\"ie/m/j/simatic/v1/pnhs1/dp\"}
+CURLcode ret = curl_easy_perform(hnd);
+var client = new RestClient("http://localhost:4203/DataService/Adapters"); var
+request = new RestRequest(Method.POST); request.AddHeader("content-type",
+"application/json"); request.AddParameter("application/json", "
+{\"name\":\"Profinet IO
+Connector\",\"active\":true,\"isDefault\":false,\"canBrowse\":true,\"config\":
+{\"useDatabusSettings\":false,\"brokerURL\":\"tcp://ie-
+databus:1883\",\"username\":\"\",\"password\":\"\",\"browseURL\":\"ie/m/j/simatic/v1/pnhs1/dp\"}
+ParameterType.RequestBody); IRestResponse response = client.Execute(request);
+Body parameters
+required
+application/json
+idstring
+Example:"profinet"
+namestring
+Example:"Profinet IO Connector"
+typestring (Enum)
+Example:"simaticadapter"
+Allowed values:"simaticadapter""hmiruntime""connectivitysuite""systeminfo"
+lockedboolean
+true, if this adapter is a default system adapter, which cannot be changed.
+Example:true
+activeboolean
+true, if this adapter is enabled.
+Example:true
+isDefaultboolean
+canBrowseboolean
+true, if this type of adapter supports browsing.
+Example:true
+18 Manual, 02/2026, A5E53813724-AFconnectedboolean
+conﬁgobject
+Adapter type speciﬁc conﬁguration.
+On e ofAdapterMqttConfig
+useDatabusSettingsboolean
+brokerURLstring
+usernamestring
+passwordstring
+The password will only transfered from the frontend to the backend in the POS T and PUT
+methods.
+browseURLstring
+openPipePathstring
+appInstanceIdstring
+defaultCycleobject
+errorobject
+servicestring
+stateinteger (Enum)
+stateTextstring (Enum)
+errorCodeinteger
+errorKeystring
+messagestring
+errorParamsobject
+debugInfoobject
+connectorInfoobject
+stateobject
+reasonstring
+Reason of the state if available.
+timestampstringdate-time
+Timestamp of the state if available.
+connectionsarray
+Connection speciﬁc state information.
+REQUEST
+{ "id": "profinet", "name": "Profinet IO Connector", "type": "simaticadapter",
+"locked": true, "active": true, "isDefault": false, "canBrowse": true,
+"connected": false, "config": { "useDatabusSettings": false, "brokerURL":
+"tcp://ie-databus:1883", "username": "", "password": "", "browseURL":
+"ie/m/j/simatic/v1/pnhs1/dp" }, "error": { "service": "example", "state": 404,
+"stateText": "NotFound", "errorCode": 4, "errorKey": "NotFound", "message": "The
+Variable with the id a12c96e4fbda472da3ffe481f06f0adb2 was not found.",
+"errorParams": { "value": "example" }, "debugInfo": { "value": "example" } },
+"connectorInfo": { "state": "available", "reason": "example", "timestamp": "2020-
+01-01T12:00:00Z", "connections": [ { "name": "example", "state": "good", "reason":
+"example", "timestamp": "2020-01-01T12:00:00Z" } ] } }
+Responses
+Success
+Body
+application/json
+idstring
+Manual, 02/2026, A5E53813724-AF 19Details
+Example:"profinet"
+namestring
+Example:"Profinet IO Connector"
+typestring (Enum)
+Example:"simaticadapter"
+Allowed values:"simaticadapter""hmiruntime""connectivitysuite""systeminfo"
+lockedboolean
+true, if this adapter is a default system adapter, which cannot be changed.
+Example:true
+activeboolean
+true, if this adapter is enabled.
+Example:true
+isDefaultboolean
+canBrowseboolean
+true, if this type of adapter supports browsing.
+Example:true
+connectedboolean
+conﬁgobject
+Adapter type speciﬁc conﬁguration.
+On e ofAdapterMqttConfig
+useDatabusSettingsboolean
+brokerURLstring
+usernamestring
+passwordstring
+The password will only transfered from the frontend to the backend in the POS T and PUT
+methods.
+browseURLstring
+openPipePathstring
+appInstanceIdstring
+defaultCycleobject
+errorobject
+servicestring
+stateinteger (Enum)
+stateTextstring (Enum)
+errorCodeinteger
+errorKeystring
+messagestring
+errorParamsobject
+debugInfoobject
+connectorInfoobject
+stateobject
+reasonstring
+Reason of the state if available.
+timestampstringdate-time
+Timestamp of the state if available.
+connectionsarray
+Connection speciﬁc state information.
+20 Manual, 02/2026, A5E53813724-AFRESPONSE
+{ "id": "profinet", "name": "Profinet IO Connector", "type": "simaticadapter",
+"locked": true, "active": true, "isDefault": false, "canBrowse": true,
+"connected": false, "config": { "useDatabusSettings": false, "brokerURL":
+"tcp://ie-databus:1883", "username": "", "password": "", "browseURL":
+"ie/m/j/simatic/v1/pnhs1/dp" }, "error": { "service": "example", "state": 404,
+"stateText": "NotFound", "errorCode": 4, "errorKey": "NotFound", "message": "The
+Variable with the id a12c96e4fbda472da3ffe481f06f0adb2 was not found.",
+"errorParams": { "value": "example" }, "debugInfo": { "value": "example" } },
+"connectorInfo": { "state": "available", "reason": "example", "timestamp": "2020-
+01-01T12:00:00Z", "connections": [ { "name": "example", "state": "good", "reason":
+"example", "timestamp": "2020-01-01T12:00:00Z" } ] } }
+Bad Request
+Body
+application/json
+servicestring
+Default:"DataService"
+stateinteger (Enum)
+Example:404
+Allowed values:200204304400401404500
+stateTextstring (Enum)
+Example:"NotFound"
+Allowed
+values:"OK ""NoContent""NotModiﬁed""BadRequest""Unauthorized""NotFound""ServerError"
+errorCodeinteger
+Example:4
+errorKeystring
+Example:"NotFound"
+messagestring
+Example:"The Variable with the id a12c96e4fbda472da3ffe481f06f0adb2 was not found."
+errorParamsobject
+valuestring
+can be any combination of strings.
+debugInfoobject
+valuestring
+can be any combination of strings.
+RESPONSEMissingParameter
+{ "service": "IIH Essentials", "state": 400, "stateText": "BadRequest",
+"errorCode": 2, "errorKey": "MissingParameter", "message": "Parameter body.### is
+missing.", "errorParams": { "what": "body.###" }, "debugInfo": { "method": "###",
+"route": "###" } }
+{ "service": "IIH Essentials", "state": 400, "stateText": "BadRequest",
+"errorCode": 3, "errorKey": "InvalidParameter", "message": "Parameter body.### is
+invalid: Unknown enum value.", "errorParams": { "reason": "Unknown enum value.",
+"what": "body.###" }, "debugInfo": { "method": "###", "route": "###" } }
+{ "service": "IIH Essentials", "state": 400, "stateText": "BadRequest",
+"errorCode": 35, "errorKey": "AdapterNameAlreadyInUse", "message": "There is
+already an adapter with the name 'Profinet IO Connector'.", "errorParams": {
+"nameInUse": "Profinet IO Connector" }, "debugInfo": { "method": "POST", "route":
+"/DataService/Adapters" } }
