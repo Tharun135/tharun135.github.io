@@ -1,28 +1,30 @@
-# Agent Layer
+# Documentation Agent Orchestrator
 
-Exploring how to build an AI agent on top of Doc-Scanner using raw 
-LLM function-calling APIs — without frameworks like LangChain or LlamaIndex.
+*Governance-first AI orchestration for technical documentation.*
 
-## The idea
+## The Problem: AI is too fluent
 
-Instead of a single LLM call per document, an agent could:
+When AI rewrites documentation, the real risk is silent meaning change — invented features, implied steps, and assumed workflows. It's hard to catch and dangerous for technical correctness.
 
-1. Decide which analysis to run based on the document type
-2. Call the right tools — readability check, style rule retrieval, rewrite
-3. Synthesize results into a single structured report
+## The Solution: Strict Governance
 
-## Why raw APIs
+This orchestrator is built to stop AI from inventing documentation. It enforces explicit governance on AI rewrites by:
 
-Frameworks abstract away the function-calling loop, which makes debugging 
-harder and customization limited. Building from raw APIs means I understand 
-exactly what's happening at each step.
+1.  **Preserving Ambiguity** — If the source is vague, the output stays vague. No guessing.
+2.  **Zero Hallucination** — Explicitly forbids adding features or steps not in the source.
+3.  **Explicit Uncertainty** — Lists exactly what was left ambiguous in a separate report section.
+4.  **Questions, Not Inventions** — If the AI needs more info to complete a task, it must stop and ask instead of assuming.
 
-## Current status
+## The Stack
 
-Early exploration. The function definitions are drafted. 
-The orchestration loop is next.
+- **Raw LLM Function-Calling** — Built directly on OpenAI/Anthropic APIs for total control, moving away from high-level frameworks like LangChain.
+- **VS Code Extension** — Integrated directly into the writer's environment for seamless governed rewrites.
+- **Prompt Governance Layer** — A custom engine that wraps every request in strict behavioral constraints.
 
-## Open question
+## Goal: Trust over Polishing
 
-How many tool calls is too many before latency becomes a problem 
-for a documentation review workflow?
+Unlike standard AI writing assistants, this tool deliberately does **not** polish sentences or simplify language. It is designed for one thing: **Trust**. If the output is generated, you know it is technically grounded in your source content.
+
+---
+
+*Current status: Functional orchestration loop in VS Code extension beta.*

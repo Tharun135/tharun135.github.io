@@ -8,4 +8,4 @@ These are works in progress. Some will ship. Some won't. All of them taught me s
 |---|---|---|
 | [Doc-Scanner](doc-scanner.md) | AI-powered documentation analysis tool | Active |
 | [RAG with ChromaDB](rag-chromadb.md) | Style rule retrieval using vector search | Active |
-| [Agent Layer](agent-layer.md) | LLM function-calling without frameworks | Exploring |
+| [Agent Orchestrator](agent-layer.md) | Governance and anti-hallucination for AI documentation | Active |
