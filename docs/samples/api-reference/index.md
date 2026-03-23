@@ -1,9 +1,5 @@
 # API Reference: IIH Essentials
 
-This is an interactive API reference sample dynamically generated from an uploaded PDF. It uses **Markdown Tabs**, **Code Highlighting**, and **Badges** to present a developer-friendly API portal.
-
----
-
 ## Overview
 
 Description of the REST API of IIH Essentials.
