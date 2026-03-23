@@ -5,9 +5,6 @@ description: A curated selection of technical documentation for various domains.
 
 A selection of documentation types I've curated across over 7 years in SaaS B2B, industrial technology, and high-stakes engineering. These samples demonstrate a focus on clarity and modular architecture.
 
-!!! warning "Work in Progress"
-    These samples are intended for structural demonstration. For a comprehensive portfolio, please contact me directly.
-
 <div class="grid cards" markdown>
 
 -   <span class="animate-fade-in delay-1">:material-api:{ .lg .middle } __API Reference Guide__</span>
