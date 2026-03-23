@@ -19,13 +19,42 @@
   background-color: rgba(15, 23, 42, 0.85) !important;
 }
 
-/* Hover effects for Cards */
-.md-typeset .grid.cards a:hover {
-  border-color: var(--md-accent-fg-color);
-  background-color: rgba(124, 77, 255, 0.05);
-  box-shadow: 0 4px 12px rgba(124, 77, 255, 0.1);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
+/* --- ANIMATIONS --- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(124, 77, 255, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(124, 77, 255, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(124, 77, 255, 0.2); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
 }
 
 /* Landing Page Hero Text */
@@ -35,6 +64,7 @@
   background: radial-gradient(circle at 50% 50%, rgba(124, 77, 255, 0.1) 0%, transparent 70%);
   border-bottom: 1px solid rgba(148, 163, 184, 0.1);
   margin-bottom: 3rem;
+  opacity: 0; /* Star hidden for animation */
 }
 
 .hero h1 {
@@ -46,7 +76,21 @@
   margin-bottom: 0.5rem;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  color: var(--md-default-fg-color--light);
+/* Hover effects for Cards */
+.md-typeset .grid.cards a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-typeset .grid.cards a:hover {
+  border-color: var(--md-accent-fg-color);
+  background-color: rgba(124, 77, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Deep Dive Card Glow */
+.admonition.abstract {
+  border-left-width: 4px !important;
+  transition: all 0.5s ease;
+  animation: pulseGlow 4s infinite;
 }
