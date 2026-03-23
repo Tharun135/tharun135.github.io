@@ -18,21 +18,13 @@ Welcome to my public learning log. While my [professional portfolio](https://por
 
     [:octicons-arrow-right-24: View Experiments](experiments/index.md)
 
--   <span class="animate-fade-in delay-2">:material-lightning-bolt-outline:{ .lg .middle } __TIL / Notes__</span>
+-   <span class="animate-fade-in delay-2">:material-book-open-outline:{ .lg .middle } __Lab Journal__</span>
 
     ---
 
-    Short capsules of knowledge and small wins from daily builds.
+    A living log of current focuses (Now) and daily discoveries (TIL).
 
-    [:octicons-arrow-right-24: Read Notes](til/index.md)
-
--   <span class="animate-fade-in delay-3">:material-clock-fast:{ .lg .middle } __Now__</span>
-
-    ---
-
-    What I am focusing on right now—current builds and learning goals.
-
-    [:octicons-arrow-right-24: See Status](now.md)
+    [:octicons-arrow-right-24: View Journal](journal.md)
 
 -   <span class="animate-fade-in delay-3">:material-file-document-outline:{ .lg .middle } __Samples__</span>
 
