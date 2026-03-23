@@ -8,4 +8,4 @@ These are works in progress. Some will ship. Some won't. All of them taught me s
 |---|---|---|
 | [Doc-Scanner](doc-scanner.md) | AI-powered documentation analysis tool | Active |
 | [RAG with ChromaDB](rag-chromadb.md) | Style rule retrieval using vector search | Active |
-| [Documentation Agent Orchestrator](documentation-agent-orchestrator.md) | Governance-driven AI orchestration for technical documentation | Active |
+| [Doc Agent Orchestrator](documentation-agent-orchestrator.md) | Governance-driven AI orchestration for technical documentation | Active |

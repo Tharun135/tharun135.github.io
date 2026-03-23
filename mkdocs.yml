@@ -8,7 +8,7 @@ nav:
       - experiments/index.md
       - Doc-Scanner: experiments/doc-scanner.md
       - RAG with ChromaDB: experiments/rag-chromadb.md
-      - Documentation Agent Orchestrator: experiments/documentation-agent-orchestrator.md
+      - Doc Agent Orchestrator: experiments/documentation-agent-orchestrator.md
   - TIL: til/index.md
   - Now: now.md
   - Samples:
