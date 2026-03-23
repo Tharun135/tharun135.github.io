@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🧠</span>
-  <h1>RAG with ChromaDB</h1>
-  <p>Leveraging vector search to manage complex style rules and context.</p>
-</div>
+---
+title: RAG with ChromaDB
+description: Leveraging vector search to manage complex style rules and context.
+---
 
 Notes on using Retrieval-Augmented Generation to store and retrieve 
 writing style rules inside Doc-Scanner.

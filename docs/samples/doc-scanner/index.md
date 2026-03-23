@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🔍</span>
-  <h1>DocScanner AI</h1>
-  <p>Technical deep-dive into AI-driven documentation review systems.</p>
-</div>
+---
+title: DocScanner AI
+description: Technical deep-dive into AI-driven documentation review systems.
+---
 
 DocScanner AI is an advanced, AI-powered document review system designed for technical writers and content creators. It combines static rule-based analysis with a **RAG (Retrieval-Augmented Generation)** engine to ensure documentation follows enterprise-grade style guides (such as the Siemens Style Guide) while maintaining high readability and semantic clarity.
 

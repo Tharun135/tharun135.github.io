@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">✍️</span>
-  <h1>Technical Writing</h1>
-  <p>Deliverable documentation managed through a docs-as-code workflow.</p>
-</div>
+---
+title: Technical Writing
+description: Deliverable documentation managed through a docs-as-code workflow.
+---
 
 My documentation work spans user manuals, API docs, and internal tooling guides — 
 delivered through a docs-as-code workflow using MkDocs and Fluid Topics.

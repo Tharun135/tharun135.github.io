@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🎨</span>
-  <h1>Projects</h1>
-  <p>Things I'm actively building, shipping, and maintaining.</p>
-</div>
+---
+title: Projects
+description: Things I'm actively building, shipping, and maintaining.
+---
 
 Things I'm actively building or have shipped.
 

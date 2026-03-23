@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">📖</span>
-  <h1>User Manual: Modbus TCP</h1>
-  <p>End-to-end installation and configuration guide for industrial networking.</p>
-</div>
+---
+title: User Manual: Modbus TCP
+description: End-to-end installation and configuration guide for industrial networking.
+---
 
 ## 1. Introduction
 

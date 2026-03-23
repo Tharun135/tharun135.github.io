@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">📦</span>
-  <h1>Release Notes</h1>
-  <p>Changelogs and evolutionary updates for technical assets.</p>
-</div>
+---
+title: Release Notes
+description: Changelogs and evolutionary updates for technical assets.
+---
 
 This is a sample release notes page formatted according to standard software changelog templates. It incorporates factual context automatically generated from the **SIMATIC S7+ Connector** and **IIH Essentials API** documentation.
 

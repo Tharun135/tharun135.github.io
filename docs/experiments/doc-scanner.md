@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🔍</span>
-  <h1>Doc-Scanner</h1>
-  <p>AI-powered documentation analysis and style guide enforcement.</p>
-</div>
+---
+title: Doc-Scanner
+description: AI-powered documentation analysis and style guide enforcement.
+---
 
 An AI-powered documentation analysis tool I built to solve real problems 
 in my own writing workflow.

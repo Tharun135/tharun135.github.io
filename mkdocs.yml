@@ -17,6 +17,9 @@ nav:
       - End-User Manual: samples/user-manual/index.md
       - Release Notes: samples/release-notes/index.md
       - DocScanner: samples/doc-scanner/index.md
+  - Projects: projects/index.md
+  - Skills: skills/index.md
+  - Writing: writing/index.md
 
 theme:
   name: material
