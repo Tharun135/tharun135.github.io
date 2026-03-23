@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">📁</span>
-  <h1>Sample Portfolio</h1>
-  <p>Interactive documentation examples across various technical domains.</p>
-</div>
+---
+title: Documentation Samples
+description: A curated selection of technical documentation for various domains.
+---
 
 A selection of documentation types I've curated across over 7 years in SaaS B2B, industrial technology, and high-stakes engineering. These samples demonstrate a focus on clarity and modular architecture.
 

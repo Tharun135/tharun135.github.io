@@ -147,6 +147,11 @@ body[data-md-color-scheme] {
   margin-bottom: 0.5rem;
 }
 
+/* Hide default H1 as we now have the Hero */
+.md-typeset h1:not(.hero h1) {
+  display: none;
+}
+
 /* Hover effects for Cards and Links */
 .md-typeset .grid.cards a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🎯</span>
-  <h1>Now</h1>
-  <p>What I am focusing on right now—current builds and learning goals.</p>
-</div>
+---
+title: Now
+description: Current builds, learning goals, and active work focuses.
+---
 
 *What I'm currently focused on — updated periodically.*
 

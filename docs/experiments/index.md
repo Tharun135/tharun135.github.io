@@ -1,3 +1,8 @@
+---
+title: Experiments
+description: AI-powered tools and governance layers for modern documentation.
+---
+
 AI tools, ideas, and builds — mostly applied to technical writing and documentation.
 
 These are ongoing works in progress. Some will ship, some won't—but all have been part of the learning journey.

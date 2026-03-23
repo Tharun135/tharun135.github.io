@@ -1,8 +1,7 @@
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">⚡</span>
-  <h1>TIL / Notes</h1>
-  <p>Short capsules of knowledge and small wins from daily builds.</p>
-</div>
+---
+title: TIL / Notes
+description: Short capsules of knowledge and small wins from daily builds.
+---
 
 Short notes on things I picked up recently. No polish, just signal.
 
