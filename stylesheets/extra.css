@@ -1,0 +1,52 @@
+:root {
+  --md-primary-fg-color:        #121858;
+  --md-primary-fg-color--light: #2c3e50;
+  --md-primary-fg-color--dark:  #1a1a1a;
+  --md-accent-fg-color:        #7c4dff;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-fg-color--light: #94a3b8;
+  --md-default-bg-color:        #0f172a;
+  --md-default-bg-color--light: #1e293b;
+  --md-footer-bg-color:         #020617;
+  --md-typeset-a-color:         #a78bfa;
+}
+
+/* Glassmorphism for the Header */
+.md-header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* Hover effects for Cards */
+.md-typeset .grid.cards a:hover {
+  border-color: var(--md-accent-fg-color);
+  background-color: rgba(124, 77, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(124, 77, 255, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Landing Page Hero Text */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: radial-gradient(circle at 50% 50%, rgba(124, 77, 255, 0.1) 0%, transparent 70%);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a78bfa, #7c4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--md-default-fg-color--light);
+}
