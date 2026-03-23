@@ -101,7 +101,20 @@ body[data-md-color-scheme] {
   transform: translateY(0);
 }
 
-.animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+@keyframes heroEntrance {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px) scale(0.95); 
+    filter: blur(10px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-in { animation: heroEntrance 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
 .animate-scale-in { animation: fadeInScale 0.6s ease-out forwards; }
 
 .delay-1 { animation-delay: 0.1s; }
@@ -158,19 +171,19 @@ body[data-md-color-scheme] {
   animation: fadeInUp 0.8s ease-out both;
 }
 
-/* Progressive delays for children of typeset to give a "flow" feel */
-.md-typeset > *:nth-child(1) { animation-delay: 0.05s; }
-.md-typeset > *:nth-child(2) { animation-delay: 0.1s; }
-.md-typeset > *:nth-child(3) { animation-delay: 0.15s; }
-.md-typeset > *:nth-child(4) { animation-delay: 0.2s; }
-.md-typeset > *:nth-child(5) { animation-delay: 0.25s; }
-.md-typeset > *:nth-child(6) { animation-delay: 0.3s; }
-.md-typeset > *:nth-child(7) { animation-delay: 0.35s; }
-.md-typeset > *:nth-child(8) { animation-delay: 0.4s; }
-.md-typeset > *:nth-child(9) { animation-delay: 0.45s; }
-.md-typeset > *:nth-child(10) { animation-delay: 0.5s; }
-.md-typeset > *:nth-child(11) { animation-delay: 0.55s; }
-.md-typeset > *:nth-child(12) { animation-delay: 0.6s; }
+/* Progressive delays for children of typeset and lists to give a "flow" feel */
+.md-typeset > *:nth-child(1), .md-typeset li:nth-child(1), .grid.cards > *:nth-child(1) { animation-delay: 0.1s; }
+.md-typeset > *:nth-child(2), .md-typeset li:nth-child(2), .grid.cards > *:nth-child(2) { animation-delay: 0.2s; }
+.md-typeset > *:nth-child(3), .md-typeset li:nth-child(3), .grid.cards > *:nth-child(3) { animation-delay: 0.3s; }
+.md-typeset > *:nth-child(4), .md-typeset li:nth-child(4), .grid.cards > *:nth-child(4) { animation-delay: 0.4s; }
+.md-typeset > *:nth-child(5), .md-typeset li:nth-child(5), .grid.cards > *:nth-child(5) { animation-delay: 0.5s; }
+.md-typeset > *:nth-child(6), .md-typeset li:nth-child(6), .grid.cards > *:nth-child(6) { animation-delay: 0.6s; }
+.md-typeset > *:nth-child(7), .md-typeset li:nth-child(7), .grid.cards > *:nth-child(7) { animation-delay: 0.7s; }
+.md-typeset > *:nth-child(8), .md-typeset li:nth-child(8), .grid.cards > *:nth-child(8) { animation-delay: 0.8s; }
+.md-typeset > *:nth-child(9), .md-typeset li:nth-child(9), .grid.cards > *:nth-child(9) { animation-delay: 0.9s; }
+.md-typeset > *:nth-child(10), .md-typeset li:nth-child(10), .grid.cards > *:nth-child(10) { animation-delay: 1.0s; }
+.md-typeset > *:nth-child(11), .md-typeset li:nth-child(11), .grid.cards > *:nth-child(11) { animation-delay: 1.1s; }
+.md-typeset > *:nth-child(12), .md-typeset li:nth-child(12), .grid.cards > *:nth-child(12) { animation-delay: 1.2s; }
 
 .md-typeset .admonition {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
