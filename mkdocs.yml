@@ -9,7 +9,7 @@ nav:
       - Doc-Scanner: experiments/doc-scanner.md
       - RAG with ChromaDB: experiments/rag-chromadb.md
       - Doc Agent Orchestrator: experiments/documentation-agent-orchestrator.md
-   - Journal: journal.md
+  - Journal: journal.md
   - Samples:
       - samples/index.md
       - API Reference Guide: samples/api-reference/index.md
