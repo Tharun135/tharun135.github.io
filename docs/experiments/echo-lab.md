@@ -1,5 +1,5 @@
 ---
-title: Speaking Tracker
+title: Echo Lab
 description: A high-performance AI speech coach for English fluency practice.
 ---
 
@@ -13,7 +13,7 @@ An AI-driven mobile application designed to help users bridge the gap between "k
 
 ## 🧠 The "Brain" (Gemini AI)
 
-The core engine of Speaking Tracker is the integration with **Gemini 1.5 Flash**. Unlike basic language apps, this implementation goes beyond simple text-to-speech:
+The core engine of Echo Lab is the integration with **Gemini 1.5 Flash**. Unlike basic language apps, this implementation goes beyond simple text-to-speech:
 
 *   **Audio Analysis**: Converts voice recordings to Base64 and sends them to Gemini for verbatim transcription and a detailed fluency score.
 *   **Content Generation**: Dynamically creates "Shadowing" sentences and "Daily Missions" (e.g., *"Use the word 'perspective' 3 times today"*) based on the user's proficiency level.

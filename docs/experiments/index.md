@@ -33,12 +33,12 @@ These are ongoing works in progress. Some will ship, some won't—but all have b
 
     [:octicons-arrow-right-24: View Deep Dive](documentation-agent-orchestrator.md)
     
--   <span class="animate-fade-in delay-4">:material-microphone:{ .lg .middle } __Speaking Tracker__</span>
+-   <span class="animate-fade-in delay-4">:material-microphone:{ .lg .middle } __Echo Lab__</span>
 
     ---
 
     An AI-powered speech coach designed for English fluency. Uses Gemini AI to analyze voice and provide feedback.
 
-    [:octicons-arrow-right-24: View Project](speaking-tracker.md)
+    [:octicons-arrow-right-24: View Project](echo-lab.md)
 
 </div>

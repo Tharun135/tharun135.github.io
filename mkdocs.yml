@@ -9,7 +9,7 @@ nav:
       - Doc-Scanner: experiments/doc-scanner.md
       - RAG with ChromaDB: experiments/rag-chromadb.md
       - Doc Agent Orchestrator: experiments/documentation-agent-orchestrator.md
-      - Speaking-Tracker: experiments/speaking-tracker.md
+      - Echo Lab: experiments/echo-lab.md
   - Journal: journal.md
   - Samples:
       - samples/index.md
