@@ -3,11 +3,6 @@ title: Speaking Tracker
 description: A high-performance AI speech coach for English fluency practice.
 ---
 
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🎙️</span>
-  <h1>Speaking Tracker</h1>
-  <p>Your personal AI English speech coach, powered by Gemini 1.5 Flash.</p>
-</div>
 
 An AI-driven mobile application designed to help users bridge the gap between "knowing English" and "speaking English fluently" through immersive, personalized daily practice. Think of it as a personal AI speech coach in your pocket.
 

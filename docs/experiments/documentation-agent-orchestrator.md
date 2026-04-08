@@ -3,11 +3,6 @@ title: Documentation Agent Orchestrator
 description: A governance layer for AI-driven documentation generation in VS Code.
 ---
 
-<div class="hero animate-fade-in" style="opacity:1;">
-  <span class="floating-icon" style="font-size: 3rem;">🛡️</span>
-  <h1>Doc Agent Orchestrator</h1>
-  <p>A strict governance layer that stops AI from hallucinating during documentation generation.</p>
-</div>
 
 ## Overview
 
