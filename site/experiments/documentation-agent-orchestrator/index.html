@@ -538,6 +538,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#key-principles" class="md-nav__link">
     <span class="md-ellipsis">
       Key Principles
@@ -1825,6 +1834,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#key-principles" class="md-nav__link">
     <span class="md-ellipsis">
       Key Principles
@@ -2889,11 +2907,13 @@
 </ol>
 <hr />
 <h2 id="overview">Overview</h2>
-<p><strong>Documentation Agent Orchestrator</strong> is a VS Code extension that acts as a governance layer between raw content and AI-generated documentation. It enforces strict rules to prevent AI hallucination while enabling AI to create structured documentation from rough notes, code comments, or incomplete specifications.</p>
-<p>The extension now includes:</p>
+<p><strong>Documentation Agent Orchestrator</strong> is a VS Code extension that acts as a <strong>governance layer</strong> to prevent AI hallucination. It prioritizes factual correctness over fluency by enforcing a strict <strong>Zero-Invention Policy</strong> between source content and AI outputs.</p>
+<h3 id="key-capabilities">Key Capabilities</h3>
 <ul>
-<li>A structured <strong>gap detection engine</strong> that proactively identifies documentation risks before generation.</li>
-<li>A new end-to-end command that pastes AI output and immediately runs governance diff preview.</li>
+<li><strong>Structured Gap Detection</strong>: Scans source content using <strong>40 rule-based checkers</strong> to identify structural ambiguities (like missing UI locations or vague actors) before any AI call is made.</li>
+<li><strong>Three-Phase Pipeline</strong>: Employs an <strong>Analyse → Question → Generate</strong> workflow where the system interactively asks the user for missing info instead of letting the AI guess.</li>
+<li><strong>Traceability</strong>: Produces documentation where any remaining uncertainties are explicitly labeled as <strong>"Preserved Ambiguities."</strong></li>
+<li><strong>Automated Validation</strong>: Includes a dedicated command to paste AI responses and immediately trigger side-by-side <strong>governance diff previews</strong>.</li>
 </ul>
 <h3 id="key-principles">Key Principles</h3>
 <ul>

@@ -21,12 +21,13 @@ description: A governance layer for AI-driven documentation generation in VS Cod
 
 ## Overview
 
-**Documentation Agent Orchestrator** is a VS Code extension that acts as a governance layer between raw content and AI-generated documentation. It enforces strict rules to prevent AI hallucination while enabling AI to create structured documentation from rough notes, code comments, or incomplete specifications.
+**Documentation Agent Orchestrator** is a VS Code extension that acts as a **governance layer** to prevent AI hallucination. It prioritizes factual correctness over fluency by enforcing a strict **Zero-Invention Policy** between source content and AI outputs.
 
-The extension now includes:
-
-* A structured **gap detection engine** that proactively identifies documentation risks before generation.
-* A new end-to-end command that pastes AI output and immediately runs governance diff preview.
+### Key Capabilities
+- **Structured Gap Detection**: Scans source content using **40 rule-based checkers** to identify structural ambiguities (like missing UI locations or vague actors) before any AI call is made.
+- **Three-Phase Pipeline**: Employs an **Analyse → Question → Generate** workflow where the system interactively asks the user for missing info instead of letting the AI guess.
+- **Traceability**: Produces documentation where any remaining uncertainties are explicitly labeled as **"Preserved Ambiguities."**
+- **Automated Validation**: Includes a dedicated command to paste AI responses and immediately trigger side-by-side **governance diff previews**.
 
 ### Key Principles
 
